@@ -166,4 +166,6 @@ $wgVirtualRestConfig['modules']['parsoid']['forwardCookies'] = true;
 
 # Extensions
 wfLoadExtension('BetaFeatures');
-wfLoadExtension('WikiEditor');
+
+$wgShowExceptionDetails = true;
+$wgShowDBErrorBacktrace = true;
