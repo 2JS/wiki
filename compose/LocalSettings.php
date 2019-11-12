@@ -164,6 +164,16 @@ $wgVirtualRestConfig['modules']['parsoid'] = array(
 $wgSessionsInObjectCache = true;
 $wgVirtualRestConfig['modules']['parsoid']['forwardCookies'] = true;
 
+$wgVisualEditorAvailableNamespaces = [
+	NS_PROJECT => true,
+	NS_PROJECT_TALK => true,
+	NS_MEDIAWIKI => true,
+	NS_MEDIAWIKI_TALK => true,
+	NS_TEMPLATE => true,
+	NS_TEMPLATE => true,
+	NS_HELP => true,
+	NS_HELP_TALK => true
+];
 # Extensions
 wfLoadExtension('BetaFeatures');
 
