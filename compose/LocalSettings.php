@@ -132,6 +132,11 @@ define("NS_JJ_TALK", 507);
 $wgExtraNamespaces[NS_JJ] = "지윤";
 $wgExtraNamespaces[NS_JJ_TALK] = "지윤_토론";
 
+$wgNamespacesWithSubpages[NS_PROJECT] = true;
+$wgNamespacesWithSubpages[NS_MEDIAWIKI] = true;
+$wgNamespacesWithSubpages[NS_TEMPLATE] = true;
+$wgNamespacesWithSubpages[NS_JJ] = true;
+
 $wgNamespacesToBeSearchedDefault[NS_JJ] = true;
 
 # The following permissions were set based on your choice in the installer
