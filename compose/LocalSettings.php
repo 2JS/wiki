@@ -115,6 +115,15 @@ $wgRightsIcon = "$wgResourceBasePath/resources/assets/licenses/cc-by-nc-sa.png";
 # Path to the GNU diff3 utility. Used for conflict resolution.
 $wgDiff3 = "/usr/bin/diff3";
 
+# Custom Namespaces
+define("NS_JJ", 506);
+define("NS_JJ_TALK", 507);
+
+$wgExtraNamespaces[NS_JJ] = "지윤";
+$wgExtraNamespaces[NS_JJ_TALK] = "지윤_토론";
+
+$wgNamespacesToBeSearchedDefault[NS_JJ] = true;
+
 # The following permissions were set based on your choice in the installer
 $wgGroupPermissions['*']['createaccount'] = false;
 $wgGroupPermissions['*']['edit'] = false;
@@ -172,7 +181,9 @@ $wgVisualEditorAvailableNamespaces = [
 	NS_TEMPLATE => true,
 	NS_TEMPLATE => true,
 	NS_HELP => true,
-	NS_HELP_TALK => true
+	NS_HELP_TALK => true,
+	NS_JJ => true,
+	NS_JJ_TALK => true
 ];
 # Extensions
 wfLoadExtension('BetaFeatures');
