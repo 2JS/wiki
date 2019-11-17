@@ -118,6 +118,9 @@ $wgRightsIcon = "$wgResourceBasePath/resources/assets/licenses/cc-by-nc-sa.png";
 # Path to the GNU diff3 utility. Used for conflict resolution.
 $wgDiff3 = "/usr/bin/diff3";
 
+# Set default timezone
+$wgLocaltimezone = "Asia/Seoul";
+
 # Allowed File Extensions
 $wgFileExtensions = array(
 	'png', 'gif', 'jpg', 'jpeg',
