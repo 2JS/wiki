@@ -118,6 +118,13 @@ $wgRightsIcon = "$wgResourceBasePath/resources/assets/licenses/cc-by-nc-sa.png";
 # Path to the GNU diff3 utility. Used for conflict resolution.
 $wgDiff3 = "/usr/bin/diff3";
 
+# Allowed File Extensions
+$wgFileExtensions = array(
+	'png', 'gif', 'jpg', 'jpeg',
+	'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx',
+	'pdf', 'ico'
+);
+
 # Custom Namespaces
 define("NS_JJ", 506);
 define("NS_JJ_TALK", 507);
