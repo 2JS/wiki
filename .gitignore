@@ -1,3 +1,6 @@
 compose/extensions/
 compose/skins/
 compose/database.env
+
+# macOS
+*.DS_Store
