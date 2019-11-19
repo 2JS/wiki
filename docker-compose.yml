@@ -1,32 +1,46 @@
 version: '3'
 
 volumes:
+  nginx_cert: {}
   private_wiki_db: {}
   private_wiki_images: {}
   private_wiki_assets: {}
 
 services:
+  nginx:
+    image: lego3410/nginx-proxy:1.0
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./compose/nginx/cert/letsencrypt:/etc/letsencrypt
+      - ./compose/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+    # env_file:
+    #   - ./compose/nginx/server.env
+
   db:
     image: mariadb
     restart: unless-stopped
     volumes:
       - private_wiki_db:/var/lib/mysql
     env_file:
-      - ./compose/database.env
+      - ./compose/db/database.env
 
   wiki:
     image: mediawiki:stable
     restart: unless-stopped
-    ports:
-      - 80:80
+    # ports:
+    #   - 80:80
+    #   - 443:443
     volumes:
       - private_wiki_images:/var/www/html/images
       - private_wiki_assets:/var/www/html/resources/assets
-      - ./compose/extensions:/var/www/html/extensions
-      - ./compose/skins:/var/www/html/skins
-      - ./compose/LocalSettings.php:/var/www/html/LocalSettings.php
+      - ./compose/wiki/extensions:/var/www/html/extensions
+      - ./compose/wiki/skins:/var/www/html/skins
+      - ./compose/wiki/LocalSettings.php:/var/www/html/LocalSettings.php
     env_file:
-      - ./compose/database.env
+      - ./compose/db/database.env
 
   parsoid:
     image: thenets/parsoid:0.10

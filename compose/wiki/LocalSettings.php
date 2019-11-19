@@ -30,7 +30,7 @@ $wgMetaNamespace = "프로젝트";
 $wgScriptPath = "";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "http://2js.dev";
+$wgServer = "https://2js.dev/wiki";
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
