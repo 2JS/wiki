@@ -1,6 +1,7 @@
 compose/wiki/extensions/
 compose/wiki/skins/
-compose/db/database.env
+
+**/*.env
 
 # macOS
 *.DS_Store
