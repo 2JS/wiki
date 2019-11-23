@@ -220,6 +220,7 @@ wfLoadExtension('BetaFeatures');
 wfLoadExtension('Cite');
 wfLoadExtension('Interwiki');
 $wgGroupPermissions['sysop']['interwiki'] = true;
+wfLoadExtension('SandboxLink');
 
 $wgShowExceptionDetails = true;
 $wgShowDBErrorBacktrace = true;
