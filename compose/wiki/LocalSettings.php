@@ -217,6 +217,7 @@ $wgVisualEditorAvailableNamespaces = [
 ];
 # Extensions
 wfLoadExtension('BetaFeatures');
+wfLoadExtension('CategoryTree');
 wfLoadExtension('Cite');
 wfLoadExtension('Interwiki');
 $wgGroupPermissions['sysop']['interwiki'] = true;
