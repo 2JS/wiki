@@ -28,9 +28,12 @@ $wgMetaNamespace = "프로젝트";
 ## (like /w/index.php/Page_title to /wiki/Page_title) please see:
 ## https://www.mediawiki.org/wiki/Manual:Short_URL
 $wgScriptPath = "";
+// $wgScriptPath = "/w";
+$wgArticlePath = "/wiki/$1";
+$wgUsePathInfo = true;
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "https://2js.dev/wiki";
+$wgServer = "https://2js.dev";
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
@@ -56,7 +59,7 @@ $wgEmailAuthentication = true;
 
 ## Database settings
 $wgDBtype = "mysql";
-$wgDBserver = "db";
+$wgDBserver = "wiki_db_1";
 $wgDBname = "wiki";
 $wgDBuser = "sysop";
 $wgDBpassword = "wLIwDrA9DSHbS3T6kP";
