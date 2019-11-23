@@ -217,6 +217,7 @@ $wgVisualEditorAvailableNamespaces = [
 ];
 # Extensions
 wfLoadExtension('BetaFeatures');
+wfLoadExtension('Cite');
 
 $wgShowExceptionDetails = true;
 $wgShowDBErrorBacktrace = true;
