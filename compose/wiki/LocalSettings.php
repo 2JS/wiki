@@ -218,6 +218,8 @@ $wgVisualEditorAvailableNamespaces = [
 # Extensions
 wfLoadExtension('BetaFeatures');
 wfLoadExtension('Cite');
+wfLoadExtension('Interwiki');
+$wgGroupPermissions['sysop']['interwiki'] = true;
 
 $wgShowExceptionDetails = true;
 $wgShowDBErrorBacktrace = true;
