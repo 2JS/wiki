@@ -32,6 +32,15 @@ $wgScriptPath = "";
 $wgArticlePath = "/wiki/$1";
 $wgUsePathInfo = true;
 
+$actions = array( 'edit', 'watch', 'unwatch', 'delete','revert', 'rollback',
+  'protect', 'unprotect', 'markpatrolled', 'render', 'submit', 'history', 'purge', 'info' );
+
+foreach ( $actions as $action ) {
+  $wgActionPaths[$action] = "/wiki/$action/$1";
+}
+$wgActionPaths['view'] = "/wiki/$1";
+$wgArticlePath = $wgActionPaths['view'];
+
 ## The protocol and server name to use in fully-qualified URLs
 $wgServer = "https://2js.dev";
 
