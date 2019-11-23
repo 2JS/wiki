@@ -164,6 +164,7 @@ $wgDefaultSkin = "vector";
 wfLoadSkin('Vector');
 $wgVectorResponsive = true;
 $wgVectorUseIconWatch = true;
+wfLoadSkin('MinervaNeue');
 
 # End of automatically generated settings.
 # Add more configuration options below.
@@ -221,6 +222,8 @@ wfLoadExtension('CategoryTree');
 wfLoadExtension('Cite');
 wfLoadExtension('Interwiki');
 $wgGroupPermissions['sysop']['interwiki'] = true;
+wfLoadExtension('MobileFrontend');
+$wgMFDefaultSkinClass = 'SkinMinerva';
 wfLoadExtension('SandboxLink');
 
 $wgShowExceptionDetails = true;
