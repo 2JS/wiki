@@ -11,7 +11,7 @@
 # https://www.mediawiki.org/wiki/Manual:Configuration_settings
 
 # Protect against web entry
-if ( !defined( 'MEDIAWIKI' ) ) {
+if ( !defined('MEDIAWIKI') ) {
 	exit;
 }
 
@@ -32,8 +32,8 @@ $wgScriptPath = "";
 $wgArticlePath = "/wiki/$1";
 $wgUsePathInfo = true;
 
-$actions = array( 'edit', 'watch', 'unwatch', 'delete','revert', 'rollback',
-  'protect', 'unprotect', 'markpatrolled', 'render', 'submit', 'history', 'purge', 'info' );
+$actions = array('edit', 'watch', 'unwatch', 'delete','revert', 'rollback',
+  'protect', 'unprotect', 'markpatrolled', 'render', 'submit', 'history', 'purge', 'info');
 
 foreach ( $actions as $action ) {
   $wgActionPaths[$action] = "/wiki/$action/$1";
@@ -170,7 +170,7 @@ wfLoadSkin('MinervaNeue');
 # Add more configuration options below.
 
 # VisualEditor Settings
-wfLoadExtension( 'VisualEditor' );
+wfLoadExtension('VisualEditor');
 // Enable by default for everybody
 $wgDefaultUserOptions['visualeditor-enable'] = 1;
 
