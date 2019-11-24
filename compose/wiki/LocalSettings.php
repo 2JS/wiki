@@ -169,6 +169,47 @@ wfLoadSkin('MinervaNeue');
 # End of automatically generated settings.
 # Add more configuration options below.
 
+# Extensions
+wfLoadExtension('BetaFeatures');
+wfLoadExtension('CategoryTree');
+wfLoadExtension('Cite');
+wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/ReCaptchaNoCaptcha' ]);
+$wgCaptchaClass = 'ReCaptchaNoCaptcha';
+$wgReCaptchaSiteKey = "${RECAPTCHASITEKEY}";
+$wgReCaptchaSecretKey = "${RECAPTCHASECRETKEY}";
+wfLoadExtension('CiteThisPage');
+wfLoadExtension('CodeEditor');
+$wgDefaultUserOptions['usebetatoolbar'] = 1; // user option provided by WikiEditor extension
+wfLoadExtension('Gadgets');
+wfLoadExtension('ImageMap');
+wfLoadExtension('InputBox');
+wfLoadExtension('Interwiki');
+$wgGroupPermissions['sysop']['interwiki'] = true;
+// wfLoadExtension('LocalisationUpdate');
+// $wgLocalisationUpdateDirectory = "$IP/cache";
+wfLoadExtension('MultimediaViewer');
+wfLoadExtension('MobileFrontend');
+$wgMFDefaultSkinClass = 'SkinMinerva';
+wfLoadExtension('Nuke');
+wfLoadExtension('OATHAuth');
+$wgGroupPermissions['user']['oathauth-enable'] = true;
+// wfLoadExtension('PageImages');
+wfLoadExtension('ParserFunctions');
+$wgPFEnableStringFunctions = true;
+// wfLoadExtension('PdfHandler');
+wfLoadExtension('Poem');
+wfLoadExtension('Renameuser');
+wfLoadExtension('ReplaceText');
+wfLoadExtension('SandboxLink');
+// wfLoadExtension('Scribunto');
+// $wgScribuntoDefaultEngine = 'luastandalone';
+wfLoadExtension('SpamBlacklist');
+wfLoadExtension('SyntaxHighlight_GeSHi');
+wfLoadExtension('TemplateData');
+// wfLoadExtension('TextExtracts');
+wfLoadExtension('TitleBlacklist');
+wfLoadExtension('WikiEditor');
+
 # VisualEditor Settings
 wfLoadExtension('VisualEditor');
 // Enable by default for everybody
@@ -216,45 +257,6 @@ $wgVisualEditorAvailableNamespaces = [
 	NS_JJ => true,
 	NS_JJ_TALK => true
 ];
-# Extensions
-wfLoadExtension('BetaFeatures');
-wfLoadExtension('CategoryTree');
-wfLoadExtension('Cite');
-wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/ReCaptchaNoCaptcha' ]);
-$wgCaptchaClass = 'ReCaptchaNoCaptcha';
-$wgReCaptchaSiteKey = "${RECAPTCHASITEKEY}";
-$wgReCaptchaSecretKey = "${RECAPTCHASECRETKEY}";
-wfLoadExtension('CiteThisPage');
-wfLoadExtension('CodeEditor');
-$wgDefaultUserOptions['usebetatoolbar'] = 1; // user option provided by WikiEditor extension
-wfLoadExtension('Gadgets');
-wfLoadExtension('ImageMap');
-wfLoadExtension('InputBox');
-wfLoadExtension('Interwiki');
-$wgGroupPermissions['sysop']['interwiki'] = true;
-// wfLoadExtension('LocalisationUpdate');
-// $wgLocalisationUpdateDirectory = "$IP/cache";
-wfLoadExtension('MultimediaViewer');
-wfLoadExtension('MobileFrontend');
-$wgMFDefaultSkinClass = 'SkinMinerva';
-wfLoadExtension('Nuke');
-wfLoadExtension('OATHAuth');
-$wgGroupPermissions['user']['oathauth-enable'] = true;
-// wfLoadExtension('PageImages');
-wfLoadExtension('ParserFunctions');
-$wgPFEnableStringFunctions = true;
-// wfLoadExtension('PdfHandler');
-wfLoadExtension('Poem');
-wfLoadExtension('Renameuser');
-wfLoadExtension('ReplaceText');
-wfLoadExtension('SandboxLink');
-// wfLoadExtension('Scribunto');
-// $wgScribuntoDefaultEngine = 'luastandalone';
-wfLoadExtension('SpamBlacklist');
-wfLoadExtension('SyntaxHighlight_GeSHi');
-// wfLoadExtension('TextExtracts');
-wfLoadExtension('TitleBlacklist');
-wfLoadExtension('WikiEditor');
 
 $wgShowExceptionDetails = true;
 $wgShowDBErrorBacktrace = true;
