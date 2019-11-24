@@ -220,6 +220,10 @@ $wgVisualEditorAvailableNamespaces = [
 wfLoadExtension('BetaFeatures');
 wfLoadExtension('CategoryTree');
 wfLoadExtension('Cite');
+wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/ReCaptchaNoCaptcha' ]);
+$wgCaptchaClass = 'ReCaptchaNoCaptcha';
+$wgReCaptchaSiteKey = "${RECAPTCHASITEKEY}";
+$wgReCaptchaSecretKey = "${RECAPTCHASECRETKEY}";
 wfLoadExtension('Interwiki');
 $wgGroupPermissions['sysop']['interwiki'] = true;
 wfLoadExtension('MobileFrontend');

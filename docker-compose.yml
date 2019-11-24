@@ -28,6 +28,7 @@ services:
       - ./compose/wiki/LocalSettings.php:/var/www/html/LocalSettings.php
     env_file:
       - ./compose/db/database.env
+      - ./compose/wiki/wiki.env
 
   parsoid:
     image: thenets/parsoid:0.10
