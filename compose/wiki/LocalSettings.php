@@ -59,8 +59,8 @@ $wgAppleTouchIcon = "$wgScriptPath/images/4/4a/2Wiki_Apple_touch_icon.png";
 $wgEnableEmail = true;
 $wgEnableUserEmail = true; # UPO
 
-$wgEmergencyContact = "apache@localhost";
-$wgPasswordSender = "apache@localhost";
+$wgEmergencyContact = "lego3410@gmail.com";
+$wgPasswordSender = "lego3410@gmail.com";
 
 $wgEnotifUserTalk = false; # UPO
 $wgEnotifWatchlist = false; # UPO
