@@ -1,0 +1,116 @@
+[submodule "compose/wiki/extensions/ConfirmEdit"]
+	path = compose/wiki/extensions/ConfirmEdit
+	url = git@github.com:wikimedia/mediawiki-extensions-ConfirmEdit.git
+	branch = REL1_33
+[submodule "compose/wiki/extensions/Cite"]
+	path = compose/wiki/extensions/Cite
+	url = https://gerrit.wikimedia.org/r/mediawiki/extensions/Cite.git
+	branch = REL1_33
+[submodule "compose/wiki/extensions/Interwiki"]
+	path = compose/wiki/extensions/Interwiki
+	url = https://gerrit.wikimedia.org/r/mediawiki/extensions/Interwiki.git
+	branch = REL1_33
+[submodule "compose/wiki/extensions/SandboxLink"]
+	path = compose/wiki/extensions/SandboxLink
+	url = git@github.com:wikimedia/mediawiki-extensions-SandboxLink.git
+	branch = REL1_33
+[submodule "compose/wiki/extensions/CategoryTree"]
+	path = compose/wiki/extensions/CategoryTree
+	url = git@github.com:wikimedia/mediawiki-extensions-CategoryTree.git
+	branch = REL1_33
+[submodule "compose/wiki/extensions/MobileFrontend"]
+	path = compose/wiki/extensions/MobileFrontend
+	url = git@github.com:wikimedia/mediawiki-extensions-MobileFrontend.git
+	branch = REL1_33
+[submodule "compose/wiki/skins/MinervaNeue"]
+	path = compose/wiki/skins/MinervaNeue
+	url = git@github.com:wikimedia/mediawiki-skins-MinervaNeue.git
+	branch = REL1_33
+[submodule "compose/wiki/extensions/BetaFeatures"]
+	path = compose/wiki/extensions/BetaFeatures
+	url = git@github.com:wikimedia/mediawiki-extensions-BetaFeatures.git
+	branch = REL1_33
+[submodule "compose/wiki/extensions/mediawiki-extensions-CiteThisPage"]
+	path = compose/wiki/extensions/mediawiki-extensions-CiteThisPage
+	url = git@github.com:wikimedia/mediawiki-extensions-CiteThisPage.git
+	branch = REL1_33
+[submodule "compose/wiki/extensions/CodeEditor"]
+	path = compose/wiki/extensions/CodeEditor
+	url = git@github.com:wikimedia/mediawiki-extensions-CodeEditor.git
+	branch = REL1_33
+[submodule "compose/wiki/extensions/CiteThisPage"]
+	path = compose/wiki/extensions/CiteThisPage
+	url = git@github.com:wikimedia/mediawiki-extensions-CiteThisPage.git
+	branch = REL1_33
+[submodule "compose/wiki/extensions/Gadgets"]
+	path = compose/wiki/extensions/Gadgets
+	url = https://github.com/wikimedia/mediawiki-extensions-Gadgets
+	branch = REL1_33
+[submodule "compose/wiki/extensions/ImageMap"]
+	path = compose/wiki/extensions/ImageMap
+	url = https://github.com/wikimedia/mediawiki-extensions-ImageMap
+	branch = REL1_33
+[submodule "compose/wiki/extensions/InputBox"]
+	path = compose/wiki/extensions/InputBox
+	url = https://github.com/wikimedia/mediawiki-extensions-InputBox
+	branch = REL1_33
+[submodule "compose/wiki/extensions/MultimediaViewer"]
+	path = compose/wiki/extensions/MultimediaViewer
+	url = https://github.com/wikimedia/mediawiki-extensions-MultimediaViewer
+	branch = REL1_33
+[submodule "compose/wiki/extensions/mediawiki-extensions-Nuke"]
+	path = compose/wiki/extensions/mediawiki-extensions-Nuke
+	url = https://github.com/wikimedia/mediawiki-extensions-Nuke
+	branch = REL1_33
+[submodule "compose/wiki/extensions/OATHAuth"]
+	path = compose/wiki/extensions/OATHAuth
+	url = https://github.com/wikimedia/mediawiki-extensions-OATHAuth
+	branch = REL1_33
+[submodule "compose/wiki/extensions/Nuke"]
+	path = compose/wiki/extensions/Nuke
+	url = https://github.com/wikimedia/mediawiki-extensions-Nuke
+	branch = REL1_33
+[submodule "compose/wiki/extensions/ParserFunctions"]
+	path = compose/wiki/extensions/ParserFunctions
+	url = https://github.com/wikimedia/mediawiki-extensions-ParserFunctions
+	branch = REL1_33
+[submodule "compose/wiki/extensions/Poem"]
+	path = compose/wiki/extensions/Poem
+	url = https://github.com/wikimedia/mediawiki-extensions-Poem
+	branch = REL1_33
+[submodule "compose/wiki/extensions/Renameuser"]
+	path = compose/wiki/extensions/Renameuser
+	url = https://github.com/wikimedia/mediawiki-extensions-Renameuser
+	branch = REL1_33
+[submodule "compose/wiki/extensions/ReplaceText"]
+	path = compose/wiki/extensions/ReplaceText
+	url = https://github.com/wikimedia/mediawiki-extensions-ReplaceText
+	branch = REL1_33
+[submodule "compose/wiki/extensions/Scribunto"]
+	path = compose/wiki/extensions/Scribunto
+	url = https://github.com/wikimedia/mediawiki-extensions-Scribunto
+	branch = REL1_33
+[submodule "compose/wiki/extensions/SpamBlacklist"]
+	path = compose/wiki/extensions/SpamBlacklist
+	url = https://github.com/wikimedia/mediawiki-extensions-SpamBlacklist
+	branch = REL1_33
+[submodule "compose/wiki/extensions/SyntaxHighlight_GeSHi"]
+	path = compose/wiki/extensions/SyntaxHighlight_GeSHi
+	url = https://github.com/wikimedia/mediawiki-extensions-SyntaxHighlight_GeSHi
+	branch = REL1_33
+[submodule "compose/wiki/extensions/TitleBlacklist"]
+	path = compose/wiki/extensions/TitleBlacklist
+	url = https://github.com/wikimedia/mediawiki-extensions-TitleBlacklist
+	branch = REL1_33
+[submodule "compose/wiki/extensions/WikiEditor"]
+	path = compose/wiki/extensions/WikiEditor
+	url = https://github.com/wikimedia/mediawiki-extensions-WikiEditor
+	branch = REL1_33
+[submodule "compose/wiki/extensions/TemplateData"]
+	path = compose/wiki/extensions/TemplateData
+	url = https://github.com/wikimedia/mediawiki-extensions-TemplateData
+	branch = REL1_33
+[submodule "compose/wiki/skins/Vector"]
+	path = compose/wiki/skins/Vector
+	url = https://github.com/wikimedia/mediawiki-skins-Vector
+	branch = REL1_33
