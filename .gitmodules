@@ -30,10 +30,6 @@
 	path = compose/wiki/extensions/BetaFeatures
 	url = git@github.com:wikimedia/mediawiki-extensions-BetaFeatures.git
 	branch = REL1_33
-[submodule "compose/wiki/extensions/mediawiki-extensions-CiteThisPage"]
-	path = compose/wiki/extensions/mediawiki-extensions-CiteThisPage
-	url = git@github.com:wikimedia/mediawiki-extensions-CiteThisPage.git
-	branch = REL1_33
 [submodule "compose/wiki/extensions/CodeEditor"]
 	path = compose/wiki/extensions/CodeEditor
 	url = git@github.com:wikimedia/mediawiki-extensions-CodeEditor.git
@@ -57,10 +53,6 @@
 [submodule "compose/wiki/extensions/MultimediaViewer"]
 	path = compose/wiki/extensions/MultimediaViewer
 	url = https://github.com/wikimedia/mediawiki-extensions-MultimediaViewer
-	branch = REL1_33
-[submodule "compose/wiki/extensions/mediawiki-extensions-Nuke"]
-	path = compose/wiki/extensions/mediawiki-extensions-Nuke
-	url = https://github.com/wikimedia/mediawiki-extensions-Nuke
 	branch = REL1_33
 [submodule "compose/wiki/extensions/OATHAuth"]
 	path = compose/wiki/extensions/OATHAuth
