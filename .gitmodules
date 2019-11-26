@@ -114,3 +114,7 @@
 	path = compose/wiki/skins/Vector
 	url = https://github.com/wikimedia/mediawiki-skins-Vector
 	branch = REL1_33
+[submodule "compose/wiki/extensions/InviteSignup"]
+	path = compose/wiki/extensions/InviteSignup
+	url = git@github.com:wikimedia/mediawiki-extensions-InviteSignup.git
+	branch = REL1_33

@@ -187,6 +187,8 @@ wfLoadExtension('Interwiki');
 $wgGroupPermissions['sysop']['interwiki'] = true;
 // wfLoadExtension('LocalisationUpdate');
 // $wgLocalisationUpdateDirectory = "$IP/cache";
+wfLoadExtension('InviteSignup');
+$wgGroupPermissions['bureaucrat']['invitesignup'] = true;
 wfLoadExtension('MultimediaViewer');
 wfLoadExtension('MobileFrontend');
 $wgMFDefaultSkinClass = 'SkinMinerva';
