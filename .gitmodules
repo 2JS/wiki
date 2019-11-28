@@ -110,3 +110,7 @@
 	path = compose/wiki/extensions/InviteSignup
 	url = git@github.com:wikimedia/mediawiki-extensions-InviteSignup.git
 	branch = REL1_33
+[submodule "compose/wiki/extensions/Lockdown"]
+	path = compose/wiki/extensions/Lockdown
+	url = git@github.com:wikimedia/mediawiki-extensions-Lockdown.git
+	branch = REL1_33
