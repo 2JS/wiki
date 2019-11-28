@@ -155,8 +155,13 @@ $wgNamespacesWithSubpages[NS_JJ] = true;
 $wgNamespacesToBeSearchedDefault[NS_JJ] = true;
 
 # The following permissions were set based on your choice in the installer
+$wgNamespaceProtection[NS_PROJECT] = ['edit-project'];
+$wgNamespaceProtection[NS_MEDIAWIKI] = ['edit-mediawiki'];
+
 $wgGroupPermissions['*']['createaccount'] = false;
 $wgGroupPermissions['*']['edit'] = false;
+$wgGroupPermissions['sysop']['edit-project'] = true;
+$wgGroupPermissions['sysop']['edit-mediawiki'] = true;
 
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names, ie 'vector', 'monobook':
