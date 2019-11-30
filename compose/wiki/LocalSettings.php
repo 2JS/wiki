@@ -62,6 +62,16 @@ $wgEnableUserEmail = true; # UPO
 $wgEmergencyContact = "lego3410@gmail.com";
 $wgPasswordSender = "lego3410@gmail.com";
 
+$wgSMTP = [
+    'host' => 'ssl://smtp.gmail.com',
+    'IDHost' => 'gmail.com',
+    'localhost' => '2js.dev',
+    'port' => 465,
+    'username' => "lego3410@gmail.com",
+    'password' => "pfgkappqdcxybobc",
+    'auth' => true
+];
+
 $wgEnotifUserTalk = false; # UPO
 $wgEnotifWatchlist = false; # UPO
 $wgEmailAuthentication = true;
