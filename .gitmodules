@@ -114,3 +114,15 @@
 	path = compose/wiki/extensions/Lockdown
 	url = git@github.com:wikimedia/mediawiki-extensions-Lockdown.git
 	branch = REL1_33
+[submodule "compose/wiki/extensions/Popups"]
+	path = compose/wiki/extensions/Popups
+	url = git@github.com:wikimedia/mediawiki-extensions-Popups.git
+	branch = REL1_33
+[submodule "compose/wiki/extensions/TextExtracts"]
+	path = compose/wiki/extensions/TextExtracts
+	url = https://gerrit.wikimedia.org/r/mediawiki/extensions/TextExtracts.git
+	branch = REL1_33
+[submodule "compose/wiki/extensions/PageImages"]
+	path = compose/wiki/extensions/PageImages
+	url = git@github.com:wikimedia/mediawiki-extensions-PageImages.git
+	branch = REL1_33

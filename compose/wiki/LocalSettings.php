@@ -214,8 +214,11 @@ $wgGroupPermissions['user']['oathauth-enable'] = true;
 // wfLoadExtension('PageImages');
 wfLoadExtension('ParserFunctions');
 $wgPFEnableStringFunctions = true;
+wfLoadExtension('PageImages'); // Popups Extension Dependency
 // wfLoadExtension('PdfHandler');
 wfLoadExtension('Poem');
+wfLoadExtension('Popups');
+$wgPopupsOptInDefaultState = '1';
 wfLoadExtension('Renameuser');
 wfLoadExtension('ReplaceText');
 wfLoadExtension('SandboxLink');
@@ -224,7 +227,7 @@ $wgScribuntoDefaultEngine = 'luastandalone';
 wfLoadExtension('SpamBlacklist');
 wfLoadExtension('SyntaxHighlight_GeSHi');
 wfLoadExtension('TemplateData');
-// wfLoadExtension('TextExtracts');
+wfLoadExtension('TextExtracts'); // Popups Extension Dependency
 wfLoadExtension('TitleBlacklist');
 wfLoadExtension('WikiEditor');
 
