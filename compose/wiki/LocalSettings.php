@@ -96,6 +96,21 @@ $wgMemCachedServers = [];
 ## To enable image uploads, make sure the 'images' directory
 ## is writable, then set this to true:
 $wgEnableUploads = true;
+
+# Allowed File Extensions
+$wgFileExtensions = array(
+	'png', 'gif', 'jpg', 'jpeg',
+	'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx',
+	'pdf', 'ico',
+	'mp4', 'mov', 'm4v',
+	'psd', 'ai'
+);
+
+$wgTrustedMediaFormats[] = 'video/quicktime';
+
+$wgUploadSizeWarning = 128*1024*1024;
+$wgMaxUploadSize = 2*1024*1024*1024;
+
 $wgUseImageMagick = true;
 $wgImageMagickConvertCommand = "/usr/bin/convert";
 
@@ -142,13 +157,6 @@ $wgDiff3 = "/usr/bin/diff3";
 
 # Set default timezone
 $wgLocaltimezone = "Asia/Seoul";
-
-# Allowed File Extensions
-$wgFileExtensions = array(
-	'png', 'gif', 'jpg', 'jpeg',
-	'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx',
-	'pdf', 'ico'
-);
 
 # Custom Namespaces
 define("NS_JJ", 506);
