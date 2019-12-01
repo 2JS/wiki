@@ -18,14 +18,18 @@ services:
   wiki:
     image: mediawiki:stable
     restart: unless-stopped
-    ports:
-      - 2080:80
+    networks:
+      - default
+      - proxy
+    # ports:
+    #   - 2080:80
     volumes:
       - private_wiki_images:/var/www/html/images
       - private_wiki_assets:/var/www/html/resources/assets
       - ./compose/wiki/extensions:/var/www/html/extensions
       - ./compose/wiki/skins:/var/www/html/skins
       - ./compose/wiki/LocalSettings.php:/var/www/html/LocalSettings.php
+      - ./compose/wiki/upload.ini:/usr/local/etc/php/conf.d/upload.ini
     env_file:
       - ./compose/db/database.env
       - ./compose/wiki/wiki.env
@@ -35,3 +39,8 @@ services:
     restart: unless-stopped
     environment:
       - PARSOID_DOMAIN_wiki=http://wiki/api.php
+
+networks:
+  proxy:
+    external:
+      name: example_default
