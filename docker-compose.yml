@@ -21,8 +21,6 @@ services:
     networks:
       - default
       - proxy
-    # ports:
-    #   - 2080:80
     volumes:
       - private_wiki_images:/var/www/html/images
       - private_wiki_assets:/var/www/html/resources/assets
