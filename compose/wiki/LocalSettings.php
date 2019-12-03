@@ -99,11 +99,13 @@ $wgEnableUploads = true;
 
 # Allowed File Extensions
 $wgFileExtensions = array(
-	'png', 'gif', 'jpg', 'jpeg',
+	'png', 'gif', 'jpg', 'jpeg', 'ico',
+	'pdf',
+	'key', 'pages', 'numbers',
 	'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx',
-	'pdf', 'ico',
 	'mp4', 'mov', 'm4v',
-	'psd', 'ai'
+	'psd', 'ai',
+	'webarchive' // especially for wiki site archiving
 );
 
 $wgTrustedMediaFormats[] = 'video/quicktime';
