@@ -197,6 +197,7 @@ wfLoadSkin('MinervaNeue');
 wfLoadExtension('BetaFeatures');
 wfLoadExtension('CategoryTree');
 wfLoadExtension('Cite');
+wfLoadExtension('CollapsibleVector');
 wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/ReCaptchaNoCaptcha' ]);
 $wgCaptchaClass = 'ReCaptchaNoCaptcha';
 $wgReCaptchaSiteKey = "${RECAPTCHASITEKEY}";
