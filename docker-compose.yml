@@ -38,13 +38,13 @@ services:
     environment:
       - PARSOID_DOMAIN_wiki=http://wiki/api.php
 
-  elasticsearch:
-    image: elasticsearch:6.5.4
-    ports:
-      - 9200:9200
-      - 9300:9300
-    environment:
-      - discovery.type=single-node
+  # elasticsearch:
+  #   image: elasticsearch:6.5.4
+  #   ports:
+  #     - 9200:9200
+  #     - 9300:9300
+  #   environment:
+  #     - discovery.type=single-node
 
 networks:
   proxy:
