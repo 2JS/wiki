@@ -130,3 +130,7 @@
 	path = compose/wiki/extensions/CollapsibleVector
 	url = git@github.com:wikimedia/mediawiki-extensions-CollapsibleVector.git
 	branch = REL1_33
+[submodule "compose/wiki/extensions/VisualEditor"]
+	path = compose/wiki/extensions/VisualEditor
+	url = https://gerrit.wikimedia.org/r/mediawiki/extensions/VisualEditor.git
+	branch = REL1_34
