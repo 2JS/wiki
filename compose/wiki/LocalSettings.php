@@ -15,6 +15,15 @@ if ( !defined('MEDIAWIKI') ) {
 	exit;
 }
 
+if (!defined('STDERR')) {
+	define('STDERR', fopen('php://stderr', 'w'));
+} 
+
+if (!isset($maintClass) || (isset($maintClass) && $maintClass !== 'PHPUnitMaintClass')) {
+	$wgMWLoggerDefaultSpi = [
+		'class' => \MediaWiki\Logger\ConsoleSpi::class,
+	];
+}
 
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
