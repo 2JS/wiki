@@ -189,6 +189,7 @@ $wgNamespaceProtection[NS_PROJECT] = ['editproject'];
 
 $wgGroupPermissions['*']['createaccount'] = false;
 $wgGroupPermissions['*']['edit'] = false;
+$wgGroupPermissions['*']['read'] = false;
 $wgGroupPermissions['sysop']['editproject'] = true;
 
 ## Default skin: you can change the default skin. Use the internal symbolic
