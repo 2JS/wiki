@@ -16,7 +16,7 @@ services:
       - ./compose/db/database.env
 
   wiki:
-    image: mediawiki:stable
+    image: mediawiki:1.34.0
     restart: unless-stopped
     networks:
       - default
@@ -31,6 +31,14 @@ services:
     env_file:
       - ./compose/db/database.env
       - ./compose/wiki/wiki.env
+    labels:
+      - "traefik.docker.network=proxy_default"
+      - "traefik.http.routers.public-wiki.rule=Host(`2js.dev`) && (PathPrefix(`/wiki/`, `/w/`) || Path(`/`, `/wiki`))"
+      - "traefik.http.routers.public-wiki.tls=true"
+      - "traefik.http.routers.public-wiki.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.public-wiki.middlewares=replace_w"
+      - "traefik.http.middlewares.replace_w.replacepathregex.regex=^/w/(.*)"
+      - "traefik.http.middlewares.replace_w.replacepathregex.replacement=/$$1"
 
   parsoid:
     image: thenets/parsoid:0.10
@@ -49,4 +57,4 @@ services:
 networks:
   proxy:
     external:
-      name: example_default
+      name: proxy_default

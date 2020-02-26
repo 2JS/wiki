@@ -17,7 +17,7 @@ if ( !defined('MEDIAWIKI') ) {
 
 if (!defined('STDERR')) {
 	define('STDERR', fopen('php://stderr', 'w'));
-} 
+}
 
 if (!isset($maintClass) || (isset($maintClass) && $maintClass !== 'PHPUnitMaintClass')) {
 	$wgMWLoggerDefaultSpi = [
@@ -36,8 +36,8 @@ $wgMetaNamespace = "프로젝트";
 ## For more information on customizing the URLs
 ## (like /w/index.php/Page_title to /wiki/Page_title) please see:
 ## https://www.mediawiki.org/wiki/Manual:Short_URL
-$wgScriptPath = "";
-// $wgScriptPath = "/w";
+// $wgScriptPath = "";
+$wgScriptPath = "/w";
 $wgArticlePath = "/wiki/$1";
 $wgUsePathInfo = true;
 
