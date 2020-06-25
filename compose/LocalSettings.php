@@ -235,7 +235,7 @@ $wgGroupPermissions['user']['oathauth-enable'] = true;
 wfLoadExtension('ParserFunctions');
 $wgPFEnableStringFunctions = true;
 wfLoadExtension('PageImages'); // Popups Extension Dependency
-// wfLoadExtension('PdfHandler');
+wfLoadExtension('PdfHandler');
 wfLoadExtension('Poem');
 wfLoadExtension('Popups');
 $wgPopupsOptInDefaultState = '1';
