@@ -1,6 +1,7 @@
 https://extdist.wmflabs.org/dist/extensions/BetaFeatures-REL1_34-d911612.tar.gz
 https://extdist.wmflabs.org/dist/extensions/CategoryTree-REL1_34-b8ad728.tar.gz
 https://extdist.wmflabs.org/dist/extensions/CollapsibleVector-REL1_34-3bd32f3.tar.gz
+https://extdist.wmflabs.org/dist/extensions/Echo-REL1_34-33e3eb2.tar.gz
 https://extdist.wmflabs.org/dist/extensions/InviteSignup-REL1_34-d2f41cb.tar.gz
 https://extdist.wmflabs.org/dist/extensions/Lockdown-REL1_34-95cdc71.tar.gz
 https://extdist.wmflabs.org/dist/extensions/MobileFrontend-REL1_34-383273b.tar.gz

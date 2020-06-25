@@ -215,6 +215,7 @@ $wgReCaptchaSecretKey = "${RECAPTCHASECRETKEY}";
 wfLoadExtension('CiteThisPage');
 wfLoadExtension('CodeEditor');
 $wgDefaultUserOptions['usebetatoolbar'] = 1; // user option provided by WikiEditor extension
+wfLoadExtension('Echo');
 wfLoadExtension('Gadgets');
 wfLoadExtension('ImageMap');
 wfLoadExtension('InputBox');
