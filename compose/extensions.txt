@@ -1,0 +1,12 @@
+https://extdist.wmflabs.org/dist/extensions/BetaFeatures-REL1_34-d911612.tar.gz
+https://extdist.wmflabs.org/dist/extensions/CategoryTree-REL1_34-b8ad728.tar.gz
+https://extdist.wmflabs.org/dist/extensions/CollapsibleVector-REL1_34-3bd32f3.tar.gz
+https://extdist.wmflabs.org/dist/extensions/InviteSignup-REL1_34-d2f41cb.tar.gz
+https://extdist.wmflabs.org/dist/extensions/Lockdown-REL1_34-95cdc71.tar.gz
+https://extdist.wmflabs.org/dist/extensions/MobileFrontend-REL1_34-383273b.tar.gz
+https://extdist.wmflabs.org/dist/extensions/MultimediaViewer-REL1_34-30ea768.tar.gz
+https://extdist.wmflabs.org/dist/extensions/Popups-REL1_34-375d27b.tar.gz
+https://extdist.wmflabs.org/dist/extensions/SandboxLink-REL1_34-c9c9809.tar.gz
+https://extdist.wmflabs.org/dist/extensions/TemplateData-REL1_34-b9ccaf6.tar.gz
+https://extdist.wmflabs.org/dist/extensions/TemplateStyles-REL1_34-c4d6f25.tar.gz
+https://extdist.wmflabs.org/dist/extensions/VisualEditor-REL1_34-74116a7.tar.gz

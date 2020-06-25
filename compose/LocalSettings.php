@@ -51,7 +51,7 @@ $wgActionPaths['view'] = "/wiki/$1";
 $wgArticlePath = $wgActionPaths['view'];
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "https://2js.dev";
+$wgServer = "https://" . $_ENV["HOST"];
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
@@ -247,6 +247,7 @@ $wgScribuntoDefaultEngine = 'luastandalone';
 wfLoadExtension('SpamBlacklist');
 wfLoadExtension('SyntaxHighlight_GeSHi');
 wfLoadExtension('TemplateData');
+wfLoadExtension('TemplateStyles');
 wfLoadExtension('TextExtracts'); // Popups Extension Dependency
 wfLoadExtension('TitleBlacklist');
 wfLoadExtension('WikiEditor');
