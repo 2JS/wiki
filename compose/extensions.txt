@@ -9,6 +9,7 @@ https://extdist.wmflabs.org/dist/extensions/MobileFrontend-REL1_34-383273b.tar.g
 https://extdist.wmflabs.org/dist/extensions/MultimediaViewer-REL1_34-30ea768.tar.gz
 https://extdist.wmflabs.org/dist/extensions/Popups-REL1_34-375d27b.tar.gz
 https://extdist.wmflabs.org/dist/extensions/SandboxLink-REL1_34-c9c9809.tar.gz
+https://extdist.wmflabs.org/dist/extensions/SiteMetrics-REL1_34-a8168b2.tar.gz
 https://extdist.wmflabs.org/dist/extensions/TemplateData-REL1_34-b9ccaf6.tar.gz
 https://extdist.wmflabs.org/dist/extensions/TemplateStyles-REL1_34-c4d6f25.tar.gz
 https://extdist.wmflabs.org/dist/extensions/VisualEditor-REL1_34-74116a7.tar.gz
