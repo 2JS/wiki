@@ -252,6 +252,7 @@ wfLoadExtension('ReplaceText');
 wfLoadExtension('SandboxLink');
 wfLoadExtension('Scribunto');
 $wgScribuntoDefaultEngine = 'luastandalone';
+wfLoadExtension('SiteMetrics');
 wfLoadExtension('SpamBlacklist');
 wfLoadExtension('SyntaxHighlight_GeSHi');
 wfLoadExtension('TemplateData');
