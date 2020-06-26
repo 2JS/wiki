@@ -217,6 +217,13 @@ wfLoadExtension('CodeEditor');
 $wgDefaultUserOptions['usebetatoolbar'] = 1; // user option provided by WikiEditor extension
 wfLoadExtension('Echo');
 wfLoadExtension('Gadgets');
+wfLoadExtension('HSTS');
+$wgHSTSBetaFeature = true;
+$wgHSTSforanons = false;
+$wgHSTSForUsers = false;
+$wgHSTSIncludeSubdomains = false;
+$wgHSTSMaxAge = 30*24*60*60;
+$wgDefaultUserOptions['hsts'] = 1;
 wfLoadExtension('ImageMap');
 wfLoadExtension('InputBox');
 wfLoadExtension('Interwiki');
