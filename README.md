@@ -19,7 +19,8 @@ Very personal wiki
 
 **CAUTION:** Do not overwrite `LocalSettings.php` as given in the last instruction. Do it if you understand what are you doing. This step initializes database.
 
-6. [Voila!](http://localhost/wiki)
+6. Run `docker-compose exec wiki php maintenance/update.php --quick`
+7. [Voila!](http://localhost/wiki)
 
 #### Set up .env file
 
