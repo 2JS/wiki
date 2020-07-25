@@ -1,1 +1,1 @@
-https://extdist.wmflabs.org/dist/skins/MinervaNeue-REL1_34-d0be74a.tar.gz
+https://extdist.wmflabs.org/dist/skins/MinervaNeue-REL1_34-ba11b7b.tar.gz
