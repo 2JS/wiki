@@ -13,8 +13,9 @@ services:
       - 443:443
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./compose/traefik.yml:/etc/traefik/traefik.yml
-      - ./compose/traefik/:/etc/traefik/config
+      - ./compose/traefik/traefik.yml:/etc/traefik/traefik.yml
+      - ./compose/traefik/config/:/etc/traefik/config/
+      - ./compose/traefik/acme.json:/etc/traefik/acme.json
     labels:
       - "traefik.docker.network=default"
       - "traefik.http.routers.dashboard.rule=Host(`localhost`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
@@ -42,10 +43,12 @@ services:
       - ./compose/wiki.env
     labels:
       - "traefik.docker.network=default"
-      - "traefik.http.routers.public-wiki.rule=(PathPrefix(`/wiki/`, `/w/`) || Path(`/`, `/wiki`)) || (Host(`localhost`) && PathPrefix(`/mw-config`))"
-      # - "traefik.http.routers.public-wiki.tls=true"
-      # - "traefik.http.routers.public-wiki.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.public-wiki.middlewares=replace_w"
+      - "traefik.http.routers.wiki.rule=PathPrefix(`/wiki/`, `/w/`) || Path(`/`, `/wiki`)"
+      - "traefik.http.routers.wiki.tls=true"
+      - "traefik.http.routers.wiki.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.wiki.middlewares=replace_w"
+      - "traefik.http.routers.wiki-local.rule=Host(`localhost`)"
+      - "traefik.http.routers.wiki-local.middlewares=replace_w"
       - "traefik.http.middlewares.replace_w.replacepathregex.regex=^/w/(.*)"
       - "traefik.http.middlewares.replace_w.replacepathregex.replacement=/$$1"
 

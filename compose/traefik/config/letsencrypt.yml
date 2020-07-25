@@ -1,0 +1,6 @@
+certificateResolvers:
+  letsencrypt:
+    acme:
+      email: ${CERT_EMAIL}
+      storage: /etc/traefik/acme.json
+      tlsChallenge: {}
