@@ -25,6 +25,9 @@ services:
     restart: unless-stopped
     volumes:
       - db:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=wiki
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
     env_file:
       - ./compose/.env
 
