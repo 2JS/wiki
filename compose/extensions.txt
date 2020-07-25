@@ -6,6 +6,7 @@ https://extdist.wmflabs.org/dist/extensions/HSTS-REL1_34-dc8873d.tar.gz
 https://extdist.wmflabs.org/dist/extensions/InviteSignup-REL1_34-d2f41cb.tar.gz
 https://extdist.wmflabs.org/dist/extensions/Lockdown-REL1_34-95cdc71.tar.gz
 https://extdist.wmflabs.org/dist/extensions/MobileFrontend-REL1_34-383273b.tar.gz
+https://extdist.wmflabs.org/dist/extensions/Math-REL1_34-b1a022f.tar.gz
 https://extdist.wmflabs.org/dist/extensions/MultimediaViewer-REL1_34-30ea768.tar.gz
 https://extdist.wmflabs.org/dist/extensions/Popups-REL1_34-375d27b.tar.gz
 https://extdist.wmflabs.org/dist/extensions/SandboxLink-REL1_34-c9c9809.tar.gz

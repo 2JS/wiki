@@ -233,6 +233,7 @@ $wgGroupPermissions['sysop']['interwiki'] = true;
 wfLoadExtension('Lockdown');
 wfLoadExtension('InviteSignup');
 $wgGroupPermissions['bureaucrat']['invitesignup'] = true;
+wfLoadExtension('Math');
 wfLoadExtension('MultimediaViewer');
 wfLoadExtension('MobileFrontend');
 $wgMFDefaultSkinClass = 'SkinMinerva';
