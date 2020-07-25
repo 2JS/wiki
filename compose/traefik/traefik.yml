@@ -15,3 +15,10 @@ api:
 
 log:
   level: WARN
+
+certificatesResolvers:
+  letsencrypt:
+    acme:
+      email: ${WG_EMERGENCYCONTACT}
+      storage: /etc/traefik/acme.json
+      tlsChallenge: {}
