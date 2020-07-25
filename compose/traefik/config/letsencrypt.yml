@@ -1,6 +1,6 @@
 certificateResolvers:
   letsencrypt:
     acme:
-      email: ${CERT_EMAIL}
+      email: ${WG_EMERGENCYCONTACT}
       storage: /etc/traefik/acme.json
       tlsChallenge: {}
