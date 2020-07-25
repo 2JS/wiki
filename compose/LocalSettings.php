@@ -169,10 +169,20 @@ $wgDiff3 = "/usr/bin/diff3";
 # Set default timezone
 $wgLocaltimezone = "Asia/Seoul";
 
+# Custom Namespaces
+define("NS_JJ", 506);
+define("NS_JJ_TALK", 507);
+
+$wgExtraNamespaces[NS_JJ] = "지윤";
+$wgExtraNamespaces[NS_JJ_TALK] = "지윤_토론";
+
 $wgNamespacesWithSubpages[NS_MAIN] = true;
 $wgNamespacesWithSubpages[NS_PROJECT] = true;
 $wgNamespacesWithSubpages[NS_MEDIAWIKI] = true;
 $wgNamespacesWithSubpages[NS_TEMPLATE] = true;
+$wgNamespacesWithSubpages[NS_JJ] = true;
+
+$wgNamespacesToBeSearchedDefault[NS_JJ] = true;
 
 # The following permissions were set based on your choice in the installer
 $wgNamespaceProtection[NS_PROJECT] = ['editproject'];
@@ -295,7 +305,9 @@ $wgVisualEditorAvailableNamespaces = [
 	NS_TEMPLATE => true,
 	NS_TEMPLATE => true,
 	NS_HELP => true,
-	NS_HELP_TALK => true
+	NS_HELP_TALK => true,
+ 	NS_JJ => true,
+ 	NS_JJ_TALK => true
 ];
 
 $wgShowExceptionDetails = true;
