@@ -38,7 +38,6 @@ $wgMetaNamespace = "프로젝트";
 ## https://www.mediawiki.org/wiki/Manual:Short_URL
 // $wgScriptPath = "";
 $wgScriptPath = "/w";
-$wgArticlePath = "/wiki/$1";
 $wgUsePathInfo = true;
 
 $actions = array('edit', 'watch', 'unwatch', 'delete','revert', 'rollback',
@@ -69,17 +68,17 @@ $wgAppleTouchIcon = "$wgScriptPath/images/a/ab/Apple_touch_icon.png";
 $wgEnableEmail = true;
 $wgEnableUserEmail = true; # UPO
 
-$wgEmergencyContact = "lego3410@gmail.com";
-$wgPasswordSender = "lego3410@gmail.com";
+$wgEmergencyContact = $_ENV["WG_EMERGENCYCONTACT"];
+$wgPasswordSender = $_ENV["WG_PASSWORDSENDER"];
 
 $wgSMTP = [
-    'host' => 'ssl://smtp.gmail.com',
-    'IDHost' => 'gmail.com',
-    'localhost' => '2js.dev',
-    'port' => 465,
-    'username' => "lego3410@gmail.com",
-    'password' => "pfgkappqdcxybobc",
-    'auth' => true
+    'host' => $_ENV["WG_SMTP_HOST"],
+    'IDHost' => $_ENV["WG_SMTP_IDHOST"],
+    'localhost' => $_ENV["WG_SMTP_LOCALHOST"],
+    'port' => $_ENV["WG_SMTP_PORT"],
+    'username' => $_ENV["WG_SMTP_USERNAME"],
+    'password' => $_ENV["WG_SMTP_PASSWORD"],
+    'auth' => $_ENV["WG_SMTP_AUTH"]
 ];
 
 $wgEnotifUserTalk = false; # UPO
@@ -88,10 +87,10 @@ $wgEmailAuthentication = true;
 
 ## Database settings
 $wgDBtype = "mysql";
-$wgDBserver = "wiki_db_1";
-$wgDBname = "wiki";
-$wgDBuser = "sysop";
-$wgDBpassword = "wLIwDrA9DSHbS3T6kP";
+$wgDBserver = "db";
+$wgDBname = $_ENV["MYSQL_DATABASE"];
+$wgDBuser = $_ENV["MYSQL_USER"];
+$wgDBpassword = $_ENV["MYSQL_PASSWORD"];
 
 # MySQL specific settings
 $wgDBprefix = "wiki_";
@@ -211,8 +210,8 @@ wfLoadExtension('Cite');
 wfLoadExtension('CollapsibleVector');
 wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/ReCaptchaNoCaptcha' ]);
 $wgCaptchaClass = 'ReCaptchaNoCaptcha';
-$wgReCaptchaSiteKey = "${RECAPTCHASITEKEY}";
-$wgReCaptchaSecretKey = "${RECAPTCHASECRETKEY}";
+$wgReCaptchaSiteKey = $_ENV["RECAPTCHASITEKEY"];
+$wgReCaptchaSecretKey = $_ENV["RECAPTCHASECRETKEY"];
 wfLoadExtension('CiteThisPage');
 wfLoadExtension('CodeEditor');
 $wgDefaultUserOptions['usebetatoolbar'] = 1; // user option provided by WikiEditor extension
