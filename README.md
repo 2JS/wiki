@@ -48,7 +48,7 @@ WG_SMTP_AUTH=true
 | BIND_URL*            | http://localhost | URL that hosts mediawiki                                     |
 | MYSQL_USER*          | wiki             | User of mariadb database.                                    |
 | MYSQL_PASSWORD*      | P@55W0RD         | Password of corresponding user                               |
-| WG_EMERGENCYCONTACT  | abcd@efg.com     | Emergency email address                                      |
+| WG_EMERGENCYCONTACT* | abcd@efg.com     | Emergency email address. Also used for letsencrypt certificate issuing. |
 | WG_PASSWORDSENDER    | abcd@efg.com     | Adress that may send email reset, security alers, etc.       |
 | WG_SMTP_HOST         |                  | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
 | WG_SMTP_IDHOST       |                  | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |

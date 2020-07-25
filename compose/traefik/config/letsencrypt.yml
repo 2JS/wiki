@@ -1,4 +1,4 @@
-certificateResolvers:
+certificatesResolvers:
   letsencrypt:
     acme:
       email: ${WG_EMERGENCYCONTACT}
