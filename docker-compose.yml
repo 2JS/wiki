@@ -1,38 +1,54 @@
 version: '3'
 
 volumes:
-  nginx_cert: {}
-  private_wiki_db: {}
-  private_wiki_images: {}
-  private_wiki_assets: {}
+  db: {}
+  images: {}
 
 services:
+  proxy:
+    image: traefik:v2.2
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./compose/traefik/traefik.yml:/etc/traefik/traefik.yml
+      - ./compose/traefik/config/:/etc/traefik/config/
+      - ./compose/traefik/acme.json:/etc/traefik/acme.json
+    labels:
+      - "traefik.docker.network=default"
+      - "traefik.http.routers.dashboard.rule=Host(`localhost`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
+      - "traefik.http.routers.dashboard.service=api@internal"
   db:
     image: mariadb
     restart: unless-stopped
     volumes:
-      - private_wiki_db:/var/lib/mysql
+      - db:/var/lib/mysql
     env_file:
       - ./compose/database.env
 
   wiki:
-    image: lego3410/wiki:1.34.2
+    image: lego3410/wiki:latest
+    build:
+      context: ./compose
+      dockerfile: ../Dockerfile
+      args:
+        MEDIAWIKI_VERSION: 1.34.2
     restart: unless-stopped
-    networks:
-      - default
-      - proxy
     volumes:
-      - private_wiki_images:/var/www/html/images
-      - private_wiki_assets:/var/www/html/resources/assets
+      - images:/var/www/html/images
     env_file:
       - ./compose/database.env
       - ./compose/wiki.env
     labels:
-      - "traefik.docker.network=proxy_default"
-      - "traefik.http.routers.public-wiki.rule=PathPrefix(`/wiki/`, `/w/`) || Path(`/`, `/wiki`)"
-      - "traefik.http.routers.public-wiki.tls=true"
-      - "traefik.http.routers.public-wiki.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.public-wiki.middlewares=replace_w"
+      - "traefik.docker.network=default"
+      - "traefik.http.routers.wiki.rule=PathPrefix(`/wiki/`, `/w/`) || Path(`/`, `/wiki`)"
+      - "traefik.http.routers.wiki.tls=true"
+      - "traefik.http.routers.wiki.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.wiki.middlewares=replace_w"
+      - "traefik.http.routers.wiki-local.rule=Host(`localhost`)"
+      - "traefik.http.routers.wiki-local.middlewares=replace_w"
       - "traefik.http.middlewares.replace_w.replacepathregex.regex=^/w/(.*)"
       - "traefik.http.middlewares.replace_w.replacepathregex.replacement=/$$1"
 
@@ -49,8 +65,3 @@ services:
   #     - 9300:9300
   #   environment:
   #     - discovery.type=single-node
-
-networks:
-  proxy:
-    external:
-      name: proxy_default

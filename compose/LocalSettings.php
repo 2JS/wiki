@@ -51,17 +51,18 @@ $wgActionPaths['view'] = "/wiki/$1";
 $wgArticlePath = $wgActionPaths['view'];
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "https://" . $_ENV["HOST"];
+$wgServer = "//" . $_SERVER["SERVER_NAME"];
+$wgCanonicalServer = "https://" . $_ENV["BIND_URL"];
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
 
 ## The URL path to the logo.  Make sure you change this from the default,
 ## or else you'll overwrite your logo when you upgrade!
-$wgLogo = "$wgScriptPath/images/7/7b/2Wiki_Logo.png";
-$wgLogoHD["2x"] = "$wgScriptPath/images/2/27/2Wiki_Logo_2x.png";
-$wgFavicon = "$wgScriptPath/images/b/bc/2Wiki_Favicon.ico";
-$wgAppleTouchIcon = "$wgScriptPath/images/4/4a/2Wiki_Apple_touch_icon.png";
+$wgLogo = "$wgScriptPath/images/c/c9/Logo.png";
+$wgLogoHD["2x"] = "$wgScriptPath/images/b/b9/Logo_2x.png";
+$wgFavicon = "$wgScriptPath/images/2/26/Favicon.png";
+$wgAppleTouchIcon = "$wgScriptPath/images/a/ab/Apple_touch_icon.png";
 
 ## UPO means: this is also a user preference option
 
