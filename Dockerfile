@@ -1,4 +1,4 @@
-ARG MEDIAWIKI_VERSION=1.34.2
+ARG MEDIAWIKI_VERSION=stable
 FROM mediawiki:${MEDIAWIKI_VERSION}
 
 RUN apt-get update && apt-get install -y wget ghostscript imagemagick xpdf-utils

@@ -51,7 +51,7 @@ $wgActionPaths['view'] = "/wiki/$1";
 $wgArticlePath = $wgActionPaths['view'];
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "https://" . $_ENV["HOST"];
+$wgServer = "//" . $_SERVER["SERVER_NAME"];
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;

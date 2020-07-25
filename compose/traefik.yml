@@ -1,0 +1,7 @@
+providers:
+  docker: {}
+  file:
+    directory: /etc/traefik/config/
+
+api:
+  dashboard: true
