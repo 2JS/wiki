@@ -43,14 +43,23 @@ services:
       - ./compose/wiki.env
     labels:
       - "traefik.docker.network=default"
+      # Router for catching local access
+      - "traefik.http.routers.wiki-local.rule=Host(`localhost`, `127.0.0.1`)"
+      - "traefik.http.routers.wiki-local.middlewares=replace_w"
+      # Router for catching global http access. Redirect to main one
+      - "traefik.http.routers.wiki-global.rule=PathPrefix(`/wiki/`, `/w/`) || Path(`/`, `/wiki`)"
+      - "traefik.http.routers.wiki-global.middlewares=redirecter"
+      - "traefik.http.routers.wiki-global.tls=false"
+      # The main router for catching global https access
       - "traefik.http.routers.wiki.rule=PathPrefix(`/wiki/`, `/w/`) || Path(`/`, `/wiki`)"
       - "traefik.http.routers.wiki.tls=true"
       - "traefik.http.routers.wiki.tls.certresolver=letsencrypt"
       - "traefik.http.routers.wiki.middlewares=replace_w"
-      - "traefik.http.routers.wiki-local.rule=Host(`localhost`)"
-      - "traefik.http.routers.wiki-local.middlewares=replace_w"
+      # strip /w from uri
       - "traefik.http.middlewares.replace_w.replacepathregex.regex=^/w/(.*)"
       - "traefik.http.middlewares.replace_w.replacepathregex.replacement=/$$1"
+      # redirect from http to https for request not from localhost
+      - "traefik.http.middlewares.redirecter.redirectscheme.scheme=https"
 
   parsoid:
     image: thenets/parsoid:0.11

@@ -4,15 +4,8 @@ providers:
     directory: /etc/traefik/config/
 
 entrypoints:
-  localhost:
-    address: "127.0.0.1:80"
-
   web:
     address: ":80"
-    https:
-      redirections:
-        entrypoint:
-          to: websecure
 
   websecure:
     address: ":443"
