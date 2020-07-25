@@ -50,6 +50,7 @@ services:
       - "traefik.http.routers.wiki-global.rule=PathPrefix(`/wiki/`, `/w/`) || Path(`/`, `/wiki`)"
       - "traefik.http.routers.wiki-global.middlewares=redirecter"
       - "traefik.http.routers.wiki-global.tls=false"
+      - "traefik.http.routers.wiki-global.priority=1" # set to be lowest priority
       # The main router for catching global https access
       - "traefik.http.routers.wiki.rule=PathPrefix(`/wiki/`, `/w/`) || Path(`/`, `/wiki`)"
       - "traefik.http.routers.wiki.tls=true"
