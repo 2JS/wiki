@@ -26,7 +26,7 @@ services:
     volumes:
       - db:/var/lib/mysql
     env_file:
-      - ./compose/database.env
+      - ./compose/.env
 
   wiki:
     image: lego3410/wiki:latest
@@ -39,8 +39,7 @@ services:
     volumes:
       - images:/var/www/html/images
     env_file:
-      - ./compose/database.env
-      - ./compose/wiki.env
+      - ./compose/.env
     labels:
       - "traefik.docker.network=default"
       # Router for catching local access
