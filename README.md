@@ -7,12 +7,14 @@ Very personal wiki
 ### Installation
 
 1. [Download](https://github.com/2JS/wiki/archive/master.zip) or clone this repository
-2. [Set up .env file](#Set up .env file).
+2. Set up .env file.
 3. Open the repository with terminal
 4. Run `docker-compose up -d`
-5. Open http://localhost/mw-config on web brower and follow the instructions
+5. Open http://localhost/mw-config on web brower and follow the instructions.
 
-**CAUTION:** Do not overwrite `LocalSettings.php` as given in the last instruction. Do it if you understand what are you doing.
+**CAUTION:** Do not overwrite `LocalSettings.php` as given in the last instruction. Do it if you understand what are you doing. This step initializes database.
+
+6. [Voila!](http://localhost/wiki)
 
 #### Set up .env file
 
