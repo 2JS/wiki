@@ -19,7 +19,6 @@ services:
     env_file:
       - ./compose/.env
     labels:
-      - "traefik.docker.network=default"
       - "traefik.http.routers.dashboard.rule=Host(`localhost`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
       - "traefik.http.routers.dashboard.service=api@internal"
   db:
@@ -46,7 +45,6 @@ services:
     env_file:
       - ./compose/.env
     labels:
-      - "traefik.docker.network=default"
       # Router for catching local access
       - "traefik.http.routers.wiki-local.rule=Host(`localhost`, `127.0.0.1`)"
       - "traefik.http.routers.wiki-local.middlewares=replace_w"
