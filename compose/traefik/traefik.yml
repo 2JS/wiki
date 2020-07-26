@@ -9,9 +9,21 @@ entrypoints:
 
   websecure:
     address: ":443"
+    http:
+      tls:
+        domains:
+          - main: 2js.dev
+        certResolver: letsencrypt
 
 api:
   dashboard: true
 
 log:
-  level: WARN
+  level: DEBUG
+
+certificatesResolvers:
+  letsencrypt:
+    acme:
+      email: lego3410@gmail.com
+      storage: /etc/traefik/acme.json
+      tlsChallenge: {}
