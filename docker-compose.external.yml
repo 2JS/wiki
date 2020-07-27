@@ -9,7 +9,10 @@ services:
     image: mariadb
     restart: unless-stopped
     volumes:
-      - private_wiki_db:/var/lib/mysql
+      - db:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=wiki
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
     env_file:
       - ./compose/.env
 
