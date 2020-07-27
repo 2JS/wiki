@@ -202,11 +202,16 @@ wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/ReCaptchaNoCaptcha' ]);
 $wgCaptchaClass = 'ReCaptchaNoCaptcha';
 $wgReCaptchaSiteKey = $_ENV["RECAPTCHASITEKEY"];
 $wgReCaptchaSecretKey = $_ENV["RECAPTCHASECRETKEY"];
+wfLoadExtension('CheckUser');
+$wgGroupPermissions['sysop']['checkuser'];
+$wgGroupPermissions['sysop']['checkuser-log'];
 wfLoadExtension('CiteThisPage');
 wfLoadExtension('CodeEditor');
 $wgDefaultUserOptions['usebetatoolbar'] = 1; // user option provided by WikiEditor extension
+wfLoadExtension('Disambiguator');
 wfLoadExtension('Echo');
 wfLoadExtension('Gadgets');
+wfLoadExtension('Graph');
 // wfLoadExtension('HSTS');
 // $wgHSTSBetaFeature = true;
 // $wgHSTSforanons = false;
@@ -220,6 +225,8 @@ wfLoadExtension('Interwiki');
 $wgGroupPermissions['sysop']['interwiki'] = true;
 // wfLoadExtension('LocalisationUpdate');
 // $wgLocalisationUpdateDirectory = "$IP/cache";
+wfLoadExtension('JsonConfig');
+// wfLoadExtension('Kartographer');
 wfLoadExtension('Lockdown');
 wfLoadExtension('InviteSignup');
 $wgGroupPermissions['bureaucrat']['invitesignup'] = true;
@@ -248,8 +255,11 @@ wfLoadExtension('SpamBlacklist');
 wfLoadExtension('SyntaxHighlight_GeSHi');
 wfLoadExtension('TemplateData');
 wfLoadExtension('TemplateStyles');
+wfLoadExtension('TemplateWizard');
+wfLoadExtension('Thanks');
 wfLoadExtension('TextExtracts'); // Popups Extension Dependency
 wfLoadExtension('TitleBlacklist');
+wfLoadExtension('TwoColConflict');
 wfLoadExtension('WikiEditor');
 
 # VisualEditor Settings
