@@ -212,13 +212,15 @@ wfLoadExtension('Disambiguator');
 wfLoadExtension('Echo');
 wfLoadExtension('Gadgets');
 wfLoadExtension('Graph');
-// wfLoadExtension('HSTS');
-// $wgHSTSBetaFeature = true;
-// $wgHSTSforanons = false;
-// $wgHSTSForUsers = false;
-// $wgHSTSIncludeSubdomains = false;
-// $wgHSTSMaxAge = 30*24*60*60;
-// $wgDefaultUserOptions['hsts'] = 1;
+if ($_SERVER["SERVER_NAME"] != "localhost") {
+	wfLoadExtension('HSTS');
+	$wgHSTSBetaFeature = true;
+	$wgHSTSforanons = false;
+	$wgHSTSForUsers = false;
+	$wgHSTSIncludeSubdomains = false;
+	$wgHSTSMaxAge = 10*60;
+	$wgDefaultUserOptions['hsts'] = 0;
+}
 wfLoadExtension('ImageMap');
 wfLoadExtension('InputBox');
 wfLoadExtension('Interwiki');
