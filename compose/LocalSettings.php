@@ -245,6 +245,7 @@ wfLoadExtension('PdfHandler');
 wfLoadExtension('Poem');
 wfLoadExtension('Popups');
 $wgPopupsOptInDefaultState = '1';
+wfLoadExtension('RevisionSlider');
 wfLoadExtension('Renameuser');
 wfLoadExtension('ReplaceText');
 wfLoadExtension('SandboxLink');
