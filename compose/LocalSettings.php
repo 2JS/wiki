@@ -297,5 +297,7 @@ $wgVisualEditorAvailableNamespaces = [
 	NS_HELP_TALK => true
 ];
 
+wfLoadExtension('KSSO');
+
 $wgShowExceptionDetails = true;
 $wgShowDBErrorBacktrace = true;
