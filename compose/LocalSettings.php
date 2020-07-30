@@ -20,7 +20,7 @@ if (!isset($maintClass) || (isset($maintClass) && $maintClass !== 'PHPUnitMaintC
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
-$wgSitename = "2Wiki";
+$wgSitename = "2JS/wiki";
 $wgMetaNamespace = "프로젝트";
 
 ## The URL base path to the directory containing the wiki;
