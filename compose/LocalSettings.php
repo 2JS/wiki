@@ -203,8 +203,8 @@ $wgCaptchaClass = 'ReCaptchaNoCaptcha';
 $wgReCaptchaSiteKey = $_ENV["RECAPTCHASITEKEY"];
 $wgReCaptchaSecretKey = $_ENV["RECAPTCHASECRETKEY"];
 wfLoadExtension('CheckUser');
-$wgGroupPermissions['sysop']['checkuser'];
-$wgGroupPermissions['sysop']['checkuser-log'];
+$wgGroupPermissions['sysop']['checkuser'] = true;
+$wgGroupPermissions['user']['checkuser-log'] = true;
 wfLoadExtension('CiteThisPage');
 wfLoadExtension('CodeEditor');
 $wgDefaultUserOptions['usebetatoolbar'] = 1; // user option provided by WikiEditor extension
