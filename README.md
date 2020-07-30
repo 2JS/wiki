@@ -33,7 +33,7 @@ MYSQL_PASSWORD=P@55W0RD
 WG_EMERGENCYCONTACT=me@mail.com
 WG_PASSWORDSENDER=me@mail.com
 WG_SECRETKEY=
-WG_UPGRADEKEY=fa739a8ee281b20c
+WG_UPGRADEKEY=4yy8yq1d4v1sxdpz
 WG_SMTP_HOST=ssl://smtp.mail.com
 WG_SMTP_IDHOST=mail.com
 WG_SMTP_LOCALHOST=this.wiki
@@ -43,20 +43,24 @@ WG_SMTP_PASSWORD=P@55W0RD
 WG_SMTP_AUTH=true
 ```
 
-| Variable (Required*) | Example          | Description                                                  |
-| -------------------- | ---------------- | ------------------------------------------------------------ |
-| BIND_URL*            | http://localhost | URL that hosts mediawiki                                     |
-| MYSQL_USER*          | wiki             | User of mariadb database.                                    |
-| MYSQL_PASSWORD*      | P@55W0RD         | Password of corresponding user                               |
-| WG_EMERGENCYCONTACT* | abcd@efg.com     | Emergency email address. Also used for letsencrypt certificate issuing. |
-| WG_PASSWORDSENDER    | abcd@efg.com     | Adress that may send email reset, security alers, etc.       |
-| WG_SMTP_HOST         |                  | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
-| WG_SMTP_IDHOST       |                  | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
-| WG_SMTP_LOCALHOST    |                  | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
-| WG_SMTP_PORT         |                  | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
-| WG_SMTP_USERNAME     |                  | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
-| WG_SMTP_PASSWORD     |                  | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
-| WG_SMTP_AUTH         |                  | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
+| Variable (Required*) | Example              | Description                                                  |
+| -------------------- | -------------------- | ------------------------------------------------------------ |
+| BIND_URL*            | http://localhost     | URL that hosts mediawiki                                     |
+| MYSQL_USER*          | wiki                 | User of mariadb database.                                    |
+| MYSQL_PASSWORD*      | P@55W0RD             | Password of corresponding user                               |
+| WG_EMERGENCYCONTACT* | abcd@efg.com         | Emergency email address. Also used for letsencrypt certificate issuing. |
+| WG_PASSWORDSENDER    | abcd@efg.com         | Adress that may send email reset, security alers, etc.       |
+| WG_SECRETKEY         | *(64 length string)* | Random 64-character string. Refer [Manual:$wgSecretKey](https://www.mediawiki.org/wiki/Manual:$wgSecretKey) |
+| WG_UPGRADEKEY        | 4yy8yq1d4v1sxdpz     | Random 16-character string. Refer [Manual:$wgUpgradeKey](https://www.mediawiki.org/wiki/Manual:$wgUpgradeKey) |
+| WG_SMTP_HOST         |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
+| WG_SMTP_IDHOST       |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
+| WG_SMTP_LOCALHOST    |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
+| WG_SMTP_PORT         |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
+| WG_SMTP_USERNAME     |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
+| WG_SMTP_PASSWORD     |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
+| WG_SMTP_AUTH         |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
+
+**CAUTION:** Be careful not to leak WG_SECRETKEY and WG_UPGRADEKEY value.
 
 ### Configure `traefik.yml`
 
