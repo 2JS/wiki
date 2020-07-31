@@ -214,6 +214,7 @@ wfLoadExtension('ImageMap');
 wfLoadExtension('InputBox');
 wfLoadExtension('Interwiki');
 $wgGroupPermissions['sysop']['interwiki'] = true;
+$wgEnableScaryTranscluding = true;
 // wfLoadExtension('LocalisationUpdate');
 // $wgLocalisationUpdateDirectory = "$IP/cache";
 wfLoadExtension('JsonConfig');
