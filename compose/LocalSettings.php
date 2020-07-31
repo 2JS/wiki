@@ -28,7 +28,6 @@ $wgMetaNamespace = "Project";
 ## For more information on customizing the URLs
 ## (like /w/index.php/Page_title to /wiki/Page_title) please see:
 ## https://www.mediawiki.org/wiki/Manual:Short_URL
-// $wgScriptPath = "";
 $wgScriptPath = "/w";
 $wgUsePathInfo = true;
 
