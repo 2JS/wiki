@@ -60,6 +60,11 @@ services:
       - "traefik.http.middlewares.replace_w.replacepathregex.replacement=/$$1"
       # redirect from http to https for request not from localhost
       - "traefik.http.middlewares.redirecter.redirectscheme.scheme=https"
+      # CORS header
+      - "traefik.http.middlewares.testheader.headers.accesscontrolallowmethods=GET,OPTIONS,PUT"
+      - "traefik.http.middlewares.testheader.headers.accesscontrolalloworiginlist=//wiki.2js.org, //wikicontent.2js.org"
+      - "traefik.http.middlewares.testheader.headers.accesscontrolmaxage=100"
+      - "traefik.http.middlewares.testheader.headers.addvaryheader=true"
 
   parsoid:
     image: thenets/parsoid:0.11
