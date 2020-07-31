@@ -21,7 +21,7 @@ if (!isset($maintClass) || (isset($maintClass) && $maintClass !== 'PHPUnitMaintC
 # $wgDisableOutputCompression = true;
 
 $wgSitename = $_ENV["WG_SITENAME"];
-$wgMetaNamespace = "Project";
+$wgMetaNamespace = "프로젝트";
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
@@ -79,12 +79,12 @@ $wgEmailAuthentication = true;
 ## Database settings
 $wgDBtype = "mysql";
 $wgDBserver = "db";
-$wgDBname = "wiki";
+$wgDBname = "wikidb";
 $wgDBuser = $_ENV["MYSQL_USER"];
 $wgDBpassword = $_ENV["MYSQL_PASSWORD"];
 
 # MySQL specific settings
-$wgDBprefix = "wiki_";
+$wgDBprefix = "";
 
 # MySQL table options to use during installation or update
 $wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
@@ -160,6 +160,30 @@ $wgDiff3 = "/usr/bin/diff3";
 # Set default timezone
 $wgLocaltimezone = "Asia/Seoul";
 
+# Create a namespace 'Official'
+define("NS_OFFICIAL", 100);
+define("NS_OFFICIAL_TALK", 101);
+
+$wgExtraNamespaces =
+    array(NS_OFFICIAL => "학부총학생회",
+          NS_OFFICIAL_TALK => "학부총학생회토론",
+    );
+
+$wgNamespaceAliases['오피셜'] = NS_OFFICIAL;
+$wgNamespaceAliases['Official'] = NS_OFFICIAL;
+$wgNamespaceAliases['학부총'] = NS_OFFICIAL;
+
+$wgNamespaceAliases['오피셜토론'] = NS_OFFICIAL_TALK;
+$wgNamespaceAliases['Official_talk'] = NS_OFFICIAL_TALK;
+
+$wgNamespacesWithSubpages[NS_OFFICIAL] = true;
+$wgNamespacesWithSubpages[NS_CATEGORY] = true;
+$wgNamespacesWithSubpages[NS_TEMPLATE] = true;
+
+$wgNamespacesToBeSearchedDefault[NS_OFFICIAL] = true;
+
+$wgRestrictDisplayTitle = false;
+
 $wgNamespacesWithSubpages[NS_MAIN] = true;
 $wgNamespacesWithSubpages[NS_PROJECT] = true;
 $wgNamespacesWithSubpages[NS_MEDIAWIKI] = true;
@@ -203,6 +227,15 @@ wfLoadExtension('Disambiguator');
 wfLoadExtension('Echo');
 wfLoadExtension('EmbedVideo');
 wfLoadExtension('EventLogging');
+wfLoadExtension('Flow');
+$wgContentHnadlerUseDB = true;
+$wgFlowContentFormat = 'html';
+$wgGroupPermissions['sysop']['flow-create-board'] = true;
+$wgGroupPermissions['sysop']['flow-suppress'] = true;
+$wgNamespaceContentModels[NS_TALK] = 'flow-board';
+$wgNamespaceContentModels[NS_USER_TALK] = 'flow-board';
+$wgNamespaceContentModels[NS_PROJECT_TALK] = 'flow-board';
+$wgNamespaceContentModels[NS_OFFICIAL_TALK] = 'flow-board';
 wfLoadExtension('Gadgets');
 wfLoadExtension('GuidedTour');
 wfLoadExtension('Graph');
@@ -301,7 +334,9 @@ $wgVisualEditorAvailableNamespaces = [
 	NS_TEMPLATE => true,
 	NS_TEMPLATE_TALK => true,
 	NS_HELP => true,
-	NS_HELP_TALK => true
+	NS_HELP_TALK => true,
+	NS_OFFICIAL => true,
+	NS_OFFICIAL_TALK => true
 ];
 
 $wgShowExceptionDetails = true;
