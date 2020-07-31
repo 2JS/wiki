@@ -28,6 +28,7 @@ This file sets system environment variable of running containers. Write a plain 
 
 ```
 BIND_URL=http://localhost
+WG_SITENAME=
 MYSQL_USER=user
 MYSQL_PASSWORD=P@55W0RD
 WG_EMERGENCYCONTACT=me@mail.com
@@ -46,6 +47,7 @@ WG_SMTP_AUTH=true
 | Variable (Required*) | Example              | Description                                                  |
 | -------------------- | -------------------- | ------------------------------------------------------------ |
 | BIND_URL*            | http://localhost     | URL that hosts mediawiki                                     |
+| WG_SITENAME*         | Wikipedia            | Name of wiki.                                                |
 | MYSQL_USER*          | wiki                 | User of mariadb database.                                    |
 | MYSQL_PASSWORD*      | P@55W0RD             | **Do not leak**. Password of corresponding user              |
 | WG_EMERGENCYCONTACT* | abcd@efg.com         | Emergency email address. Also used for letsencrypt certificate issuing. |
