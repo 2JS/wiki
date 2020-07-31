@@ -33,7 +33,7 @@ MYSQL_PASSWORD=P@55W0RD
 WG_EMERGENCYCONTACT=me@mail.com
 WG_PASSWORDSENDER=me@mail.com
 WG_SECRETKEY=
-WG_UPGRADEKEY=fa739a8ee281b20c
+WG_UPGRADEKEY=4yy8yq1d4v1sxdpz
 WG_SMTP_HOST=ssl://smtp.mail.com
 WG_SMTP_IDHOST=mail.com
 WG_SMTP_LOCALHOST=this.wiki
@@ -43,20 +43,32 @@ WG_SMTP_PASSWORD=P@55W0RD
 WG_SMTP_AUTH=true
 ```
 
-| Variable (Required*) | Example          | Description                                                  |
-| -------------------- | ---------------- | ------------------------------------------------------------ |
-| BIND_URL*            | http://localhost | URL that hosts mediawiki                                     |
-| MYSQL_USER*          | wiki             | User of mariadb database.                                    |
-| MYSQL_PASSWORD*      | P@55W0RD         | Password of corresponding user                               |
-| WG_EMERGENCYCONTACT* | abcd@efg.com     | Emergency email address. Also used for letsencrypt certificate issuing. |
-| WG_PASSWORDSENDER    | abcd@efg.com     | Adress that may send email reset, security alers, etc.       |
-| WG_SMTP_HOST         |                  | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
-| WG_SMTP_IDHOST       |                  | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
-| WG_SMTP_LOCALHOST    |                  | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
-| WG_SMTP_PORT         |                  | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
-| WG_SMTP_USERNAME     |                  | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
-| WG_SMTP_PASSWORD     |                  | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
-| WG_SMTP_AUTH         |                  | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
+| Variable (Required*) | Example              | Description                                                  |
+| -------------------- | -------------------- | ------------------------------------------------------------ |
+| BIND_URL*            | http://localhost     | URL that hosts mediawiki                                     |
+| MYSQL_USER*          | wiki                 | User of mariadb database.                                    |
+| MYSQL_PASSWORD*      | P@55W0RD             | **Do not leak**. Password of corresponding user              |
+| WG_EMERGENCYCONTACT* | abcd@efg.com         | Emergency email address. Also used for letsencrypt certificate issuing. |
+| WG_PASSWORDSENDER    | abcd@efg.com         | Adress that may send email reset, security alers, etc.       |
+| WG_SECRETKEY*        | *(64 length string)* | **Do not leak**. Random 64-character alphanumeric string. You can generate one with `keygen.py`. Refer [Manual:$wgSecretKey](https://www.mediawiki.org/wiki/Manual:$wgSecretKey). |
+| WG_UPGRADEKEY*       | 1omwk5pxsphkk6cl     | **Do not leak**. Random 16-character alphanumeric string. You can generate one with `keygen.py`. Refer [Manual:$wgUpgradeKey](https://www.mediawiki.org/wiki/Manual:$wgUpgradeKey) |
+| WG_SMTP_HOST         |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
+| WG_SMTP_IDHOST       |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
+| WG_SMTP_LOCALHOST    |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
+| WG_SMTP_PORT         |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
+| WG_SMTP_USERNAME     |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
+| WG_SMTP_PASSWORD     |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
+| WG_SMTP_AUTH         |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
+
+#### `keygen.py`
+
+You need these unique keys to run secure wiki. Type `python keygen.py` or shortly `./keygen.py` to generate one.
+
+```bash
+> ./keygen.py # either python 2 or 3 is fine.
+$wgSecretKey=   8nghg15hmibsqqzzdqpeue9on9k5ezumyis6d1rrfmx8lpjsj3xchohwhx5gb4jo
+$wgUpgradeKey=  1omwk5pxsphkk6cl
+```
 
 ### Configure `traefik.yml`
 
@@ -89,3 +101,6 @@ docker-compose up -d --build
 docker-compose down
 ```
 
+**CAUTION**: Do not use option `-v` or `--volumes` when stopping services. It will irreversibly delete wiki data(including files and articles, users, etc) entirely.
+
+## Backup
