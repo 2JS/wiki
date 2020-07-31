@@ -292,7 +292,7 @@ $wgVisualEditorAvailableNamespaces = [
 	NS_MEDIAWIKI => true,
 	NS_MEDIAWIKI_TALK => true,
 	NS_TEMPLATE => true,
-	NS_TEMPLATE => true,
+	NS_TEMPLATE_TALK => true,
 	NS_HELP => true,
 	NS_HELP_TALK => true
 ];
