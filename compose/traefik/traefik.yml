@@ -9,11 +9,11 @@ entrypoints:
 
   websecure:
     address: ":443"
-    http:
-      tls:
-        domains:
-          - main: 2js.dev
-        certResolver: letsencrypt
+    # http:
+    #   tls:
+    #     domains:
+    #       - main: 2js.dev
+    #     certResolver: letsencrypt
 
 api:
   dashboard: true

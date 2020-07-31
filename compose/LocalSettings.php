@@ -28,7 +28,8 @@ $wgMetaNamespace = $_ENV["WG_METANAMESPACE"];
 ## For more information on customizing the URLs
 ## (like /w/index.php/Page_title to /wiki/Page_title) please see:
 ## https://www.mediawiki.org/wiki/Manual:Short_URL
-$wgScriptPath = "/w";
+// $wgScriptPath = "";
+$wgScriptPath = "//wikicontent.2js.org";
 $wgUsePathInfo = true;
 
 $actions = array('edit', 'watch', 'unwatch', 'delete','revert', 'rollback',
@@ -37,12 +38,11 @@ $actions = array('edit', 'watch', 'unwatch', 'delete','revert', 'rollback',
 foreach ( $actions as $action ) {
   $wgActionPaths[$action] = "/wiki/$action/$1";
 }
-$wgActionPaths['view'] = "/wiki/$1";
+$wgActionPaths['view'] = "/$1";
 $wgArticlePath = $wgActionPaths['view'];
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "//" . $_SERVER["SERVER_NAME"];
-$wgCanonicalServer = "https://" . $_ENV["BIND_URL"];
+$wgServer = "//wiki.2js.org";
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
