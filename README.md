@@ -10,8 +10,8 @@ Very personal wiki
 ## Installation
 
 1. [Download](https://github.com/2JS/wiki/archive/master.zip) or clone this repository
-2. Set up .env file.
-3. Configure traefik.yml.
+2. Set up `.config`, `.env` file.
+3. Configure `traefik.yml`.
 4. Open the repository with terminal
 5. Create empty `compose/traefik/acme.json` file.
 6. Run `docker-compose up -d`
@@ -22,15 +22,25 @@ Very personal wiki
 6. Run `docker-compose exec wiki php maintenance/update.php --quick`
 7. [Voila!](http://localhost/wiki)
 
-### Set up .env file
+### Set up `.env`, `.config` file
 
 This file sets system environment variable of running containers. Write a plain text file named `.env` inside `compose` directory.
+
+#### `.env`
+
+```
+HOST=localhost
+```
+
+| Variable (Required*) | Example   | Description              |
+| -------------------- | --------- | ------------------------ |
+| HOST*                | localhost | URL that hosts mediawiki |
+
+#### `.config`
 
 ```
 MYSQL_USER=user
 MYSQL_PASSWORD=P@55W0RD
-
-BIND_URL=http://localhost
 WG_SITENAME=
 WG_METANAMESPACE=Project
 WG_EMERGENCYCONTACT=me@mail.com
@@ -50,7 +60,6 @@ WG_SMTP_AUTH=true
 | -------------------- | -------------------- | ------------------------------------------------------------ |
 | MYSQL_USER*          | wiki                 | User of mariadb database.                                    |
 | MYSQL_PASSWORD*      | P@55W0RD             | **Do not leak**. Password of corresponding user              |
-| BIND_URL*            | http://localhost     | URL that hosts mediawiki                                     |
 | WG_SITENAME*         | Wikipedia            | Name of wiki.                                                |
 | WG_METANAMESPACE*    | Project              | Name for project namespace                                   |
 | WG_EMERGENCYCONTACT* | abcd@efg.com         | Emergency email address. Also used for letsencrypt certificate issuing. |
@@ -60,10 +69,10 @@ WG_SMTP_AUTH=true
 | WG_SMTP_HOST         |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
 | WG_SMTP_IDHOST       |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
 | WG_SMTP_LOCALHOST    |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
-| WG_SMTP_PORT         |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
+| WG_SMTP_PORT         | 465                  | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
 | WG_SMTP_USERNAME     |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
 | WG_SMTP_PASSWORD     |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
-| WG_SMTP_AUTH         |                      | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
+| WG_SMTP_AUTH         | 1 or empty           | Refer [Manual:$wgSMTP](https://www.mediawiki.org/wiki/Manual:$wgSMTP) |
 
 #### `keygen.py`
 

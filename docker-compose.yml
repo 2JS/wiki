@@ -14,7 +14,7 @@ services:
       - MYSQL_DATABASE=wiki
       - MYSQL_RANDOM_ROOT_PASSWORD=yes
     env_file:
-      - ./compose/.env
+      - .config
 
   wiki:
     image: lego3410/wiki:latest
@@ -23,6 +23,7 @@ services:
       dockerfile: ../Dockerfile
       args:
         MEDIAWIKI_VERSION: 1.34.2
+    hostname: ${HOST}
     restart: unless-stopped
     networks:
       - default
@@ -30,19 +31,20 @@ services:
     volumes:
       - images:/var/www/html/images
     env_file:
-      - ./compose/.env
+      - .config
+      - .env
     labels:
       - "traefik.docker.network=proxy_default"
       # Router for catching local access
       - "traefik.http.routers.wiki-local.rule=Host(`localhost`, `127.0.0.1`)"
       - "traefik.http.routers.wiki-local.middlewares=replace_w"
       # Router for catching global http access. Redirect to main one
-      - "traefik.http.routers.wiki-global.rule=PathPrefix(`/wiki/`, `/w/`) || Path(`/`, `/wiki`)"
+      - "traefik.http.routers.wiki-global.rule=Host(`${HOST}`) && PathPrefix(`/wiki/`, `/w/`) || Path(`/`, `/wiki`)"
       - "traefik.http.routers.wiki-global.middlewares=redirecter"
       - "traefik.http.routers.wiki-global.tls=false"
       - "traefik.http.routers.wiki-global.priority=1" # set to be lowest priority
       # The main router for catching global https access
-      - "traefik.http.routers.wiki.rule=PathPrefix(`/wiki/`, `/w/`) || Path(`/`, `/wiki`)"
+      - "traefik.http.routers.wiki.rule=Host(`${HOST}`) && PathPrefix(`/wiki/`, `/w/`) || Path(`/`, `/wiki`)"
       - "traefik.http.routers.wiki.tls=true"
       - "traefik.http.routers.wiki.tls.certresolver=letsencrypt"
       - "traefik.http.routers.wiki.middlewares=replace_w"
