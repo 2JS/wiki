@@ -84,7 +84,7 @@ $wgDBuser = $_ENV["MYSQL_USER"];
 $wgDBpassword = $_ENV["MYSQL_PASSWORD"];
 
 # MySQL specific settings
-$wgDBprefix = "wiki_";
+$wgDBprefix = "";
 
 # MySQL table options to use during installation or update
 $wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
