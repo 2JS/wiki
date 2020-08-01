@@ -18,12 +18,12 @@ docker-compose --project-directory $DIR \
     -h localhost \
     -u$MYSQL_USER \
     -p$MYSQL_PASSWORD \
-    wiki | gzip > $BACKUPDIR/mysqldump.sql.gz
+    wiki | gzip > $BACKUPDIR/mysqldump.sql.gz 2> $BACKUPDIR/mysql.log
 echo done.
 
 echo Backing up images into $BACKUPDIR/images.tar.gz...
 
 # copy images directory into a compressed file
-docker cp wiki_wiki_1:/var/www/html/images - | gzip > $BACKUPDIR/images.tar.gz
+docker cp wiki_wiki_1:/var/www/html/images - | gzip > $BACKUPDIR/images.tar.gz 2> $BACKUPDIR/images.log
 
 echo done.
