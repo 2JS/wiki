@@ -27,10 +27,12 @@ Very personal wiki
 This file sets system environment variable of running containers. Write a plain text file named `.env` inside `compose` directory.
 
 ```
-BIND_URL=http://localhost
-WG_SITENAME=
 MYSQL_USER=user
 MYSQL_PASSWORD=P@55W0RD
+
+BIND_URL=http://localhost
+WG_SITENAME=
+WG_METANAMESPACE=Project
 WG_EMERGENCYCONTACT=me@mail.com
 WG_PASSWORDSENDER=me@mail.com
 WG_SECRETKEY=
@@ -46,10 +48,11 @@ WG_SMTP_AUTH=true
 
 | Variable (Required*) | Example              | Description                                                  |
 | -------------------- | -------------------- | ------------------------------------------------------------ |
-| BIND_URL*            | http://localhost     | URL that hosts mediawiki                                     |
-| WG_SITENAME*         | Wikipedia            | Name of wiki.                                                |
 | MYSQL_USER*          | wiki                 | User of mariadb database.                                    |
 | MYSQL_PASSWORD*      | P@55W0RD             | **Do not leak**. Password of corresponding user              |
+| BIND_URL*            | http://localhost     | URL that hosts mediawiki                                     |
+| WG_SITENAME*         | Wikipedia            | Name of wiki.                                                |
+| WG_METANAMESPACE*    | Project              | Name for project namespace                                   |
 | WG_EMERGENCYCONTACT* | abcd@efg.com         | Emergency email address. Also used for letsencrypt certificate issuing. |
 | WG_PASSWORDSENDER    | abcd@efg.com         | Adress that may send email reset, security alers, etc.       |
 | WG_SECRETKEY*        | *(64 length string)* | **Do not leak**. Random 64-character alphanumeric string. You can generate one with `keygen.py`. Refer [Manual:$wgSecretKey](https://www.mediawiki.org/wiki/Manual:$wgSecretKey). |
