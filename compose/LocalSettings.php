@@ -66,10 +66,10 @@ $wgSMTP = [
     'host' => $_ENV["WG_SMTP_HOST"],
     'IDHost' => $_ENV["WG_SMTP_IDHOST"],
     'localhost' => $_ENV["WG_SMTP_LOCALHOST"],
-    'port' => $_ENV["WG_SMTP_PORT"],
+    'port' => (int)$_ENV["WG_SMTP_PORT"],
     'username' => $_ENV["WG_SMTP_USERNAME"],
     'password' => $_ENV["WG_SMTP_PASSWORD"],
-    'auth' => $_ENV["WG_SMTP_AUTH"]
+    'auth' => $_ENV["WG_SMTP_AUTH"] ? true : false
 ];
 
 $wgEnotifUserTalk = false; # UPO
