@@ -21,7 +21,7 @@ if (!isset($maintClass) || (isset($maintClass) && $maintClass !== 'PHPUnitMaintC
 # $wgDisableOutputCompression = true;
 
 $wgSitename = $_ENV["WG_SITENAME"];
-$wgMetaNamespace = "Project";
+$wgMetaNamespace = $_ENV["WG_METANAMESPACE"];
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
