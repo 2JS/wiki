@@ -187,6 +187,7 @@ wfLoadSkin('MinervaNeue');
 # Extensions
 wfLoadExtension('BetaFeatures');
 wfLoadExtension('CategoryTree');
+wfLoadExtension('CirrusSearch');
 wfLoadExtension('Cite');
 wfLoadExtension('CollapsibleVector');
 wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/ReCaptchaNoCaptcha' ]);
@@ -201,6 +202,7 @@ wfLoadExtension('CodeEditor');
 $wgDefaultUserOptions['usebetatoolbar'] = 1; // user option provided by WikiEditor extension
 wfLoadExtension('Disambiguator');
 wfLoadExtension('Echo');
+wfLoadExtension('Elastica');
 wfLoadExtension('Gadgets');
 wfLoadExtension('Graph');
 // wfLoadExtension('HSTS');

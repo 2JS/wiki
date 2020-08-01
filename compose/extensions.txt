@@ -1,9 +1,11 @@
 https://extdist.wmflabs.org/dist/extensions/BetaFeatures-REL1_34-d911612.tar.gz
 https://extdist.wmflabs.org/dist/extensions/CategoryTree-REL1_34-b8ad728.tar.gz
 https://extdist.wmflabs.org/dist/extensions/CheckUser-REL1_34-8f9478d.tar.gz
+https://extdist.wmflabs.org/dist/extensions/CirrusSearch-REL1_34-a86e0a5.tar.gz
 https://extdist.wmflabs.org/dist/extensions/CollapsibleVector-REL1_34-3bd32f3.tar.gz
 https://extdist.wmflabs.org/dist/extensions/Disambiguator-REL1_34-f6fffcd.tar.gz
 https://extdist.wmflabs.org/dist/extensions/Echo-REL1_34-33e3eb2.tar.gz
+https://extdist.wmflabs.org/dist/extensions/Elastica-REL1_34-b33d985.tar.gz
 https://extdist.wmflabs.org/dist/extensions/Flow-REL1_34-5a1c2eb.tar.gz
 https://extdist.wmflabs.org/dist/extensions/Graph-REL1_34-eb3412d.tar.gz
 https://extdist.wmflabs.org/dist/extensions/HSTS-REL1_34-dc8873d.tar.gz
