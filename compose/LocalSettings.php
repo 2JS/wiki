@@ -339,5 +339,38 @@ $wgVisualEditorAvailableNamespaces = [
 	NS_OFFICIAL_TALK => true
 ];
 
+# limit Official namespace edit to sysop.
+# see mediawiki.org/wiki/Manual:$wgNamespaceProtection
+# and mediawiki.org/wiki/Manual:Using_custom_namespaces
+$wgNamespaceProtection[NS_OFFICIAL]      = array('official-edit');
+$wgNamespaceProtection[NS_MEDIAWIKI]     = array('mediawiki-edit');
+$wgNamespaceProtection[NS_MEDIAWIKI_TALK]= array('mediawiki-talk-edit');
+$wgNamespaceProtection[NS_PROJECT]       = array('project-edit');
+
+$wgGroupPermissions['sysop']['official-edit'] = false; // sysop can edit pages in the Official namespace
+$wgGroupPermissions['sysop']['mediawiki-edit'] = true; // sysop can edit pages in the MediaWiki namespace
+$wgGroupPermissions['sysop']['mediawiki-talk-edit'] = true; // sysop can edit pages in the MediaWiki_talk namespace
+$wgGroupPermissions['sysop']['project-edit'] = true;
+
+## Custom user group Officer
+$wgGroupPermissions['Officer'] = array(
+    'official-edit' => true,
+    'apihighlimits' => true,
+    'autoconfirmed' => true,
+    'suppressredirect' => true,
+    'noratelimit' => true,
+    'editsemiprotected' => true,
+    'editmyprivateinfo' => true,
+    'skipcaptcha' => true,
+);
+
+$wgGroupPermissions['bureaucrat']['deletelogentry'] = true;
+$wgGroupPermissions['bureaucrat']['deleterevision'] = true;
+$wgGroupPermissions['bureaucrat']['hideuser'] = true;
+$wgGroupPermissions['bureaucrat']['suppressrevision'] = true;
+$wgGroupPermissions['bureaucrat']['suppressionlog'] = true;
+$wgGroupPermissions['bureaucrat']['viewsuppressed'] = true;
+
+
 $wgShowExceptionDetails = true;
 $wgShowDBErrorBacktrace = true;
