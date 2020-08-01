@@ -20,14 +20,7 @@ COPY ./upload.ini /usr/local/etc/php/conf.d/
 
 WORKDIR /var/www/html
 
-FROM alpine as embedvideo
-
-ADD https://gitlab.com/hydrawiki/extensions/EmbedVideo/-/archive/master/EmbedVideo-master.tar.gz /
-WORKDIR /EmbedVideo
-RUN tar xzf ../EmbedVideo-master.tar.gz
-RUN mv EmbedVideo-master EmbedVideo
 
 FROM installer
 
-COPY --from=embedvideo /EmbedVideo /var/www/html/extensions
 COPY ./LocalSettings.php /var/www/html/

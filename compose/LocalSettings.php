@@ -84,7 +84,7 @@ $wgDBuser = $_ENV["MYSQL_USER"];
 $wgDBpassword = $_ENV["MYSQL_PASSWORD"];
 
 # MySQL specific settings
-$wgDBprefix = "";
+$wgDBprefix = "wiki_";
 
 # MySQL table options to use during installation or update
 $wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
@@ -160,30 +160,6 @@ $wgDiff3 = "/usr/bin/diff3";
 # Set default timezone
 $wgLocaltimezone = "Asia/Seoul";
 
-# Create a namespace 'Official'
-define("NS_OFFICIAL", 100);
-define("NS_OFFICIAL_TALK", 101);
-
-$wgExtraNamespaces =
-    array(NS_OFFICIAL => "학부총학생회",
-          NS_OFFICIAL_TALK => "학부총학생회토론",
-    );
-
-$wgNamespaceAliases['오피셜'] = NS_OFFICIAL;
-$wgNamespaceAliases['Official'] = NS_OFFICIAL;
-$wgNamespaceAliases['학부총'] = NS_OFFICIAL;
-
-$wgNamespaceAliases['오피셜토론'] = NS_OFFICIAL_TALK;
-$wgNamespaceAliases['Official_talk'] = NS_OFFICIAL_TALK;
-
-$wgNamespacesWithSubpages[NS_OFFICIAL] = true;
-$wgNamespacesWithSubpages[NS_CATEGORY] = true;
-$wgNamespacesWithSubpages[NS_TEMPLATE] = true;
-
-$wgNamespacesToBeSearchedDefault[NS_OFFICIAL] = true;
-
-$wgRestrictDisplayTitle = false;
-
 $wgNamespacesWithSubpages[NS_MAIN] = true;
 $wgNamespacesWithSubpages[NS_PROJECT] = true;
 $wgNamespacesWithSubpages[NS_MEDIAWIKI] = true;
@@ -225,19 +201,7 @@ wfLoadExtension('CodeEditor');
 $wgDefaultUserOptions['usebetatoolbar'] = 1; // user option provided by WikiEditor extension
 wfLoadExtension('Disambiguator');
 wfLoadExtension('Echo');
-wfLoadExtension('EmbedVideo');
-wfLoadExtension('EventLogging');
-wfLoadExtension('Flow');
-$wgContentHnadlerUseDB = true;
-$wgFlowContentFormat = 'html';
-$wgGroupPermissions['sysop']['flow-create-board'] = true;
-$wgGroupPermissions['sysop']['flow-suppress'] = true;
-$wgNamespaceContentModels[NS_TALK] = 'flow-board';
-$wgNamespaceContentModels[NS_USER_TALK] = 'flow-board';
-$wgNamespaceContentModels[NS_PROJECT_TALK] = 'flow-board';
-$wgNamespaceContentModels[NS_OFFICIAL_TALK] = 'flow-board';
 wfLoadExtension('Gadgets');
-wfLoadExtension('GuidedTour');
 wfLoadExtension('Graph');
 // wfLoadExtension('HSTS');
 // $wgHSTSBetaFeature = true;
@@ -250,15 +214,13 @@ wfLoadExtension('ImageMap');
 wfLoadExtension('InputBox');
 wfLoadExtension('Interwiki');
 $wgGroupPermissions['sysop']['interwiki'] = true;
-wfLoadExtension('InviteSignup');
-$wgGroupPermissions['bureaucrat']['invitesignup'] = true;
-wfLoadExtension('JsonConfig');
-// wfLoadExtension('Kartographer');
 // wfLoadExtension('LocalisationUpdate');
 // $wgLocalisationUpdateDirectory = "$IP/cache";
+wfLoadExtension('JsonConfig');
+// wfLoadExtension('Kartographer');
 wfLoadExtension('Lockdown');
-wfLoadExtension('LoginNotify');
-wfLoadExtension('MassMessage');
+wfLoadExtension('InviteSignup');
+$wgGroupPermissions['bureaucrat']['invitesignup'] = true;
 wfLoadExtension('Math');
 wfLoadExtension('MultimediaViewer');
 wfLoadExtension('MobileFrontend');
@@ -278,8 +240,6 @@ wfLoadExtension('RevisionSlider');
 wfLoadExtension('Renameuser');
 wfLoadExtension('ReplaceText');
 wfLoadExtension('SandboxLink');
-wfLoadExtension('SecurePoll');
-$wgGroupPermissions['bureaucrat']['securepoll-create-poll'] = true;
 wfLoadExtension('Scribunto');
 $wgScribuntoDefaultEngine = 'luastandalone';
 wfLoadExtension('SiteMetrics');
@@ -334,43 +294,8 @@ $wgVisualEditorAvailableNamespaces = [
 	NS_TEMPLATE => true,
 	NS_TEMPLATE_TALK => true,
 	NS_HELP => true,
-	NS_HELP_TALK => true,
-	NS_OFFICIAL => true,
-	NS_OFFICIAL_TALK => true
+	NS_HELP_TALK => true
 ];
-
-# limit Official namespace edit to sysop.
-# see mediawiki.org/wiki/Manual:$wgNamespaceProtection
-# and mediawiki.org/wiki/Manual:Using_custom_namespaces
-$wgNamespaceProtection[NS_OFFICIAL]      = array('official-edit');
-$wgNamespaceProtection[NS_MEDIAWIKI]     = array('mediawiki-edit');
-$wgNamespaceProtection[NS_MEDIAWIKI_TALK]= array('mediawiki-talk-edit');
-$wgNamespaceProtection[NS_PROJECT]       = array('project-edit');
-
-$wgGroupPermissions['sysop']['official-edit'] = false; // sysop can edit pages in the Official namespace
-$wgGroupPermissions['sysop']['mediawiki-edit'] = true; // sysop can edit pages in the MediaWiki namespace
-$wgGroupPermissions['sysop']['mediawiki-talk-edit'] = true; // sysop can edit pages in the MediaWiki_talk namespace
-$wgGroupPermissions['sysop']['project-edit'] = true;
-
-## Custom user group Officer
-$wgGroupPermissions['Officer'] = array(
-    'official-edit' => true,
-    'apihighlimits' => true,
-    'autoconfirmed' => true,
-    'suppressredirect' => true,
-    'noratelimit' => true,
-    'editsemiprotected' => true,
-    'editmyprivateinfo' => true,
-    'skipcaptcha' => true,
-);
-
-$wgGroupPermissions['bureaucrat']['deletelogentry'] = true;
-$wgGroupPermissions['bureaucrat']['deleterevision'] = true;
-$wgGroupPermissions['bureaucrat']['hideuser'] = true;
-$wgGroupPermissions['bureaucrat']['suppressrevision'] = true;
-$wgGroupPermissions['bureaucrat']['suppressionlog'] = true;
-$wgGroupPermissions['bureaucrat']['viewsuppressed'] = true;
-
 
 $wgShowExceptionDetails = true;
 $wgShowDBErrorBacktrace = true;
