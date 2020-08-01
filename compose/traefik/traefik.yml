@@ -12,7 +12,7 @@ entrypoints:
     http:
       tls:
         domains:
-          - main: 2js.dev
+          - main: student.kaist.ac.kr
         certResolver: letsencrypt
 
 api:
@@ -24,6 +24,6 @@ log:
 certificatesResolvers:
   letsencrypt:
     acme:
-      email: lego3410@gmail.com
+      email: kaistua@kaist.ac.kr
       storage: /etc/traefik/acme.json
       tlsChallenge: {}
