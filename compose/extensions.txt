@@ -12,7 +12,7 @@ https://extdist.wmflabs.org/dist/extensions/JsonConfig-REL1_34-f877d87.tar.gz
 https://extdist.wmflabs.org/dist/extensions/Kartographer-REL1_34-3728a91.tar.gz
 https://extdist.wmflabs.org/dist/extensions/Lockdown-REL1_34-95cdc71.tar.gz
 https://extdist.wmflabs.org/dist/extensions/Math-REL1_34-b1a022f.tar.gz
-https://extdist.wmflabs.org/dist/extensions/MobileFrontend-REL1_34-e9c1fb2.tar.gz
+https://extdist.wmflabs.org/dist/extensions/MobileFrontend-REL1_34-6a8ef84.tar.gz
 https://extdist.wmflabs.org/dist/extensions/MultimediaViewer-REL1_34-30ea768.tar.gz
 https://extdist.wmflabs.org/dist/extensions/Popups-REL1_34-375d27b.tar.gz
 https://extdist.wmflabs.org/dist/extensions/RevisionSlider-REL1_34-7842cdf.tar.gz
