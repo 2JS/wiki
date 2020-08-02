@@ -9,13 +9,11 @@ Very personal wiki
 
 ## Installation
 
-1. [Download](https://github.com/2JS/wiki/archive/master.zip) or clone this repository
-2. Set up `.config`, `.env` file.
-3. Configure `traefik.yml`.
-4. Open the repository with terminal
-5. Create empty `compose/traefik/acme.json` file. Set permisson `600`.
-6. Run `docker-compose up -d`
-7. Open http://localhost/mw-config on web brower and follow the instructions.
+1. [Download](https://github.com/2JS/wiki/archive/master.zip) or clone this repository.
+2. Run `sudo ./bootstrap.sh` in termial.
+3. Set up `.env`, `.config` file. Details below.
+4. Run `docker-compose up -d` in terminal.
+5. Open http://localhost/mw-config on web brower and follow the instructions.
 
 **CAUTION:** Do not overwrite `LocalSettings.php` as given in the last instruction. Do it if you understand what are you doing. This step initializes database.
 
