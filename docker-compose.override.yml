@@ -11,9 +11,19 @@ services:
       - proxy
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./compose/traefik/traefik.yml:/etc/traefik/traefik.yml
-      - ./compose/traefik/config/:/etc/traefik/config/
       - ./compose/traefik/acme.json:/etc/traefik/acme.json
+    command: 
+      - --providers.docker=true
+      - --api.dashboard=true
+      - --log.level=DEBUG
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      - --certificatesresolvers.letsencrypt.acme.email=${EMAIL}
+      - --certificatesresolvers.letsencrypt.acme.tlschallenge=true
+      - --certificatesresolvers.letsencrypt.acme.storage=/etc/traefik/acme.json
+      # Uncomment following line to test letsencrypt certificate issuing.
+      # - --certificatesresolvers.letsencrypt.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory
+
     labels:
       - "traefik.http.routers.dashboard.rule=Host(`localhost`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
       - "traefik.http.routers.dashboard.service=api@internal"

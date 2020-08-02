@@ -42,7 +42,7 @@ $wgArticlePath = $wgActionPaths['view'];
 
 ## The protocol and server name to use in fully-qualified URLs
 $wgServer = "//" . $_SERVER["SERVER_NAME"];
-$wgCanonicalServer = "https://" . $_ENV["BIND_URL"];
+$wgCanonicalServer = "http://" . $_ENV["HOST"];
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
