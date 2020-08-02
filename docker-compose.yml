@@ -34,7 +34,6 @@ services:
       - .config
       - .env
     labels:
-      - "traefik.docker.network=proxy_default"
       # Router for catching local access
       - "traefik.http.routers.wiki-local.rule=Host(`localhost`, `127.0.0.1`)"
       - "traefik.http.routers.wiki-local.middlewares=replace_w"

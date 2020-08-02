@@ -13,7 +13,7 @@ Very personal wiki
 2. Set up `.config`, `.env` file.
 3. Configure `traefik.yml`.
 4. Open the repository with terminal
-5. Create empty `compose/traefik/acme.json` file.
+5. Create empty `compose/traefik/acme.json` file. Set permisson `600`.
 6. Run `docker-compose up -d`
 7. Open http://localhost/mw-config on web brower and follow the instructions.
 
@@ -30,11 +30,13 @@ This file sets system environment variable of running containers. Write a plain 
 
 ```
 HOST=localhost
+EMAIL=me@mail.com
 ```
 
-| Variable (Required*) | Example   | Description              |
-| -------------------- | --------- | ------------------------ |
-| HOST*                | localhost | URL that hosts mediawiki |
+| Variable (Required*) | Example     | Description                                           |
+| -------------------- | ----------- | ----------------------------------------------------- |
+| HOST*                | localhost   | URL that hosts mediawiki                              |
+| EMAIL*               | me@mail.com | An email address for issuing letsencrypt certificate. |
 
 #### `.config`
 
