@@ -11,9 +11,11 @@ services:
       - proxy
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./compose/treafik/config:/etc/treafik/config
       - ./compose/traefik/acme.json:/etc/traefik/acme.json
     command: 
       - --providers.docker=true
+      - --providers.file.directory=/etc/traefik/config
       - --api.dashboard=true
       - --log.level=DEBUG
       - --entrypoints.web.address=:80
