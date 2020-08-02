@@ -5,7 +5,7 @@ DIR=$(dirname $0)
 DATE=$(date +%Y%m%d-%H%M)
 BACKUPDIR=$DIR/backups/$DATE
 
-source $DIR/compose/.env
+source $DIR/.env
 
 mkdir -p $BACKUPDIR
 
