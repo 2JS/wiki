@@ -11,7 +11,7 @@ services:
       - proxy
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./compose/treafik/config:/etc/treafik/config
+      - ./compose/traefik/config:/etc/traefik/config
       - ./compose/traefik/acme.json:/etc/traefik/acme.json
     command: 
       - --providers.docker=true
