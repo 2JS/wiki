@@ -24,3 +24,4 @@ WORKDIR /var/www/html
 FROM installer
 
 COPY ./LocalSettings.php /var/www/html/
+COPY ./KSSO /var/www/html/extensions/KSSO/

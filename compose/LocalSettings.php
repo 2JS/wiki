@@ -218,6 +218,7 @@ $wgGroupPermissions['sysop']['interwiki'] = true;
 // $wgLocalisationUpdateDirectory = "$IP/cache";
 wfLoadExtension('JsonConfig');
 // wfLoadExtension('Kartographer');
+wfLoadExtension('KSSO');
 wfLoadExtension('Lockdown');
 wfLoadExtension('InviteSignup');
 $wgGroupPermissions['bureaucrat']['invitesignup'] = true;
@@ -296,8 +297,6 @@ $wgVisualEditorAvailableNamespaces = [
 	NS_HELP => true,
 	NS_HELP_TALK => true
 ];
-
-wfLoadExtension('KSSO');
 
 $wgShowExceptionDetails = true;
 $wgShowDBErrorBacktrace = true;

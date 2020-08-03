@@ -13,7 +13,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./compose/traefik/config:/etc/traefik/config
       - ./compose/traefik/acme.json:/etc/traefik/acme.json
-    command: 
+    command:
       - --providers.docker=true
       - --providers.file.directory=/etc/traefik/config
       - --api.dashboard=true
@@ -27,6 +27,7 @@ services:
       # - --certificatesresolvers.letsencrypt.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory
 
     labels:
+      - "traefik.docker.network=proxy_default"
       - "traefik.http.routers.dashboard.rule=Host(`localhost`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
       - "traefik.http.routers.dashboard.service=api@internal"
 
