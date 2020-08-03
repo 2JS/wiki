@@ -151,7 +151,7 @@ $wgUpgradeKey = $_ENV["WG_UPGRADEKEY"];
 ## License and Creative Commons licenses are supported so far.
 $wgRightsPage = ""; # Set to the title of a wiki page that describes your license/copyright
 $wgRightsUrl = "https://creativecommons.org/licenses/by-nc-sa/4.0/";
-$wgRightsText = "크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락";
+$wgRightsText = "크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제";
 $wgRightsIcon = "$wgResourceBasePath/resources/assets/licenses/cc-by-nc-sa.png";
 
 # Path to the GNU diff3 utility. Used for conflict resolution.
