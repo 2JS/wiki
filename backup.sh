@@ -13,7 +13,7 @@ echo Creating a backup at $(date +"%Y.%m.%d %H:%M")
 echo Backing up database into $BACKUPDIR/mysqldump.sql.gz...
 
 # dump sql database from db container to a single compressed file
-docker-compose --project-directory $DIR \
+time docker-compose --project-directory $DIR \
     exec db mysqldump \
     -h localhost \
     -u$MYSQL_USER \
@@ -24,6 +24,6 @@ echo done.
 echo Backing up images into $BACKUPDIR/images.tar.gz...
 
 # copy images directory into a compressed file
-docker cp wiki_wiki_1:/var/www/html/images - | gzip > $BACKUPDIR/images.tar.gz 2> $BACKUPDIR/images.log
+time docker cp wiki_wiki_1:/var/www/html/images - | gzip > $BACKUPDIR/images.tar.gz 2> $BACKUPDIR/images.log
 
 echo done.
