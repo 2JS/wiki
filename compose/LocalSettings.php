@@ -164,6 +164,7 @@ $wgNamespacesWithSubpages[NS_MAIN] = true;
 $wgNamespacesWithSubpages[NS_PROJECT] = true;
 $wgNamespacesWithSubpages[NS_MEDIAWIKI] = true;
 $wgNamespacesWithSubpages[NS_TEMPLATE] = true;
+$wgNamespacesWithSubpages[NS_HELP] = true;
 
 # The following permissions were set based on your choice in the installer
 $wgNamespaceProtection[NS_PROJECT] = ['editproject'];
