@@ -17,7 +17,7 @@ services:
       - --providers.docker=true
       - --providers.file.directory=/etc/traefik/config
       - --api.dashboard=true
-      - --log.level=DEBUG
+      - --log.level=WARN
       - --entrypoints.web.address=:80
       - --entrypoints.websecure.address=:443
       - --certificatesresolvers.letsencrypt.acme.email=${EMAIL}
