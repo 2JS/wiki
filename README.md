@@ -33,7 +33,7 @@ EMAIL=me@mail.com
 
 | Variable (Required*) | Example     | Description                                           |
 | -------------------- | ----------- | ----------------------------------------------------- |
-| HOST*                | localhost   | URL that hosts mediawiki                              |
+| HOST*                | localhost   | Domain name that hosts mediawiki. Or IP address.      |
 | EMAIL*               | me@mail.com | An email address for issuing letsencrypt certificate. |
 
 #### `.config`
@@ -117,4 +117,14 @@ docker-compose down
 
 **CAUTION**: Do not use option `-v` or `--volumes` when stopping services. It will irreversibly delete wiki data(including files and articles, users, etc) entirely.
 
-## Backup
+## Backup and Restore
+
+To backup, run backup script. It'll archive database contents and uploaded files into `backups` directory.
+
+```bash
+./backup.sh
+```
+
+Restore script is not ready yet.
+
+Refer to [Manual:Backing up a wiki](https://mediawiki.org/wiki/Manual:Backing_up_a_wiki) for more detail.
