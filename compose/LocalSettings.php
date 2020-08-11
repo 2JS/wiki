@@ -99,7 +99,7 @@ $wgEnableUploads = true;
 
 # Allowed File Extensions
 $wgFileExtensions = array(
-	'png', 'gif', 'jpg', 'jpeg', 'ico',
+	'png', 'gif', 'jpg', 'jpeg', 'ico', 'svg',
 	'pdf',
 	'key', 'pages', 'numbers',
 	'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx',
