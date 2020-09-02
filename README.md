@@ -43,6 +43,7 @@ MYSQL_USER=user
 MYSQL_PASSWORD=P@55W0RD
 WG_SITENAME=
 WG_METANAMESPACE=Project
+WG_LANGUAGECODE=en
 WG_EMERGENCYCONTACT=me@mail.com
 WG_PASSWORDSENDER=me@mail.com
 WG_SECRETKEY=
@@ -62,6 +63,7 @@ WG_SMTP_AUTH=true
 | MYSQL_PASSWORD*      | P@55W0RD             | **Do not leak**. Password of corresponding user              |
 | WG_SITENAME*         | Wikipedia            | Name of wiki.                                                |
 | WG_METANAMESPACE*    | Project              | Name for project namespace                                   |
+| WG_LANGUAGECODE*     | en                   | Language code for wiki                                       |
 | WG_EMERGENCYCONTACT* | abcd@efg.com         | Emergency email address. Also used for letsencrypt certificate issuing. |
 | WG_PASSWORDSENDER    | abcd@efg.com         | Adress that may send email reset, security alers, etc.       |
 | WG_SECRETKEY*        | *(64 length string)* | **Do not leak**. Random 64-character alphanumeric string. You can generate one with `keygen.py`. Refer [Manual:$wgSecretKey](https://www.mediawiki.org/wiki/Manual:$wgSecretKey). |

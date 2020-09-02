@@ -135,7 +135,7 @@ $wgShellLocale = "C.UTF-8";
 #$wgCacheDirectory = "$IP/cache";
 
 # Site language code, should be one of the list in ./languages/data/Names.php
-$wgLanguageCode = "ko";
+$wgLanguageCode = $_ENV["WG_LANGUAGECODE"];
 
 $wgSecretKey = $_ENV["WG_SECRETKEY"];
 
