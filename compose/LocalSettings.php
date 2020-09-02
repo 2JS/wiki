@@ -28,16 +28,16 @@ $wgMetaNamespace = $_ENV["WG_METANAMESPACE"];
 ## For more information on customizing the URLs
 ## (like /w/index.php/Page_title to /wiki/Page_title) please see:
 ## https://www.mediawiki.org/wiki/Manual:Short_URL
-$wgScriptPath = "/w";
+$wgScriptPath = $_ENV["WG_SCRIPTPATH"];
 $wgUsePathInfo = true;
 
 $actions = array('edit', 'watch', 'unwatch', 'delete','revert', 'rollback',
   'protect', 'unprotect', 'markpatrolled', 'render', 'submit', 'history', 'purge', 'info');
 
 foreach ( $actions as $action ) {
-  $wgActionPaths[$action] = "/wiki/$action/$1";
+  $wgActionPaths[$action] = $_ENV["WG_PATH"]."/$action/$1";
 }
-$wgActionPaths['view'] = "/wiki/$1";
+$wgActionPaths['view'] = $_ENV["WG_PATH"]."/$1";
 $wgArticlePath = $wgActionPaths['view'];
 
 ## The protocol and server name to use in fully-qualified URLs
