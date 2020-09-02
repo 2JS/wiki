@@ -29,20 +29,22 @@ This file sets system environment variable of running containers. Write a plain 
 ```
 HOST=localhost
 EMAIL=me@mail.com
+WG_PATH=/wiki
+WG_SCRIPTPATH=/w
 ```
 
 | Variable (Required*) | Example     | Description                                           |
 | -------------------- | ----------- | ----------------------------------------------------- |
 | HOST*                | localhost   | Domain name that hosts mediawiki. Or IP address.      |
 | EMAIL*               | me@mail.com | An email address for issuing letsencrypt certificate. |
+| WG_PATH*             | /wiki       | URI path for wiki articles.                           |
+| WG_SCRIPTPATH*       | /w          | URI path for wiki resources(scripts, images, etc).    |
 
 #### `.config`
 
 ```
 MYSQL_USER=user
 MYSQL_PASSWORD=P@55W0RD
-WG_PATH=/wiki
-WG_SCRIPTPATH=/w
 WG_SITENAME=
 WG_METANAMESPACE=Project
 WG_LANGUAGECODE=en
@@ -63,8 +65,6 @@ WG_SMTP_AUTH=true
 | -------------------- | -------------------- | ------------------------------------------------------------ |
 | MYSQL_USER*          | wiki                 | User of mariadb database.                                    |
 | MYSQL_PASSWORD*      | P@55W0RD             | **Do not leak**. Password of corresponding user              |
-| WG_PATH*             | /wiki                | URI path for wiki articles.                                  |
-| WG_SCRIPTPATH*       | /w                   | URI path for wiki resources(scripts, images, etc).           |
 | WG_SITENAME*         | Wikipedia            | Name of wiki.                                                |
 | WG_METANAMESPACE*    | Project              | Name for project namespace                                   |
 | WG_LANGUAGECODE*     | en                   | Language code for wiki                                       |

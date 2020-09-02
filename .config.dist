@@ -7,11 +7,6 @@
 MYSQL_USER=
 MYSQL_PASSWORD=
 
-# WG_PATH env var is not actual mediawiki global variable.
-# It's defined for URI path.
-WG_PATH=/wiki
-WG_SCRIPTPATH=/w
-
 WG_SITENAME=
 WG_METANAMESPACE=
 WG_LANGUAGECODE=en
