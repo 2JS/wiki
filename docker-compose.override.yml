@@ -12,7 +12,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./compose/traefik/config:/etc/traefik/config
-      - ./compose/traefik/acme.json:/etc/traefik/acme.json
+      - acme:/etc/acme
     command: 
       - --providers.docker=true
       - --providers.file.directory=/etc/traefik/config
@@ -22,7 +22,7 @@ services:
       - --entrypoints.websecure.address=:443
       - --certificatesresolvers.letsencrypt.acme.email=${EMAIL}
       - --certificatesresolvers.letsencrypt.acme.tlschallenge=true
-      - --certificatesresolvers.letsencrypt.acme.storage=/etc/traefik/acme.json
+      - --certificatesresolvers.letsencrypt.acme.storage=/etc/acme/acme.json
       # Uncomment following line to test letsencrypt certificate issuing.
       # - --certificatesresolvers.letsencrypt.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory
 
@@ -33,3 +33,6 @@ services:
 networks: 
   proxy:
     name: proxy_default
+
+volumes:
+  acme: {}
